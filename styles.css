@@ -5,17 +5,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('img/Echte-Belgische-Frieten.jpg'); 
+    background-image: url('./img/Echte-Belgische-Frieten.jpg'); /* Adjust the path as necessary */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: white;
     text-align: center;
     flex-direction: column; /* This ensures the column layout */
+    padding: 10px; /* Add padding for small screens */
 }
 
 h1 {
-    font-size: 10rem; /* Adjust the size as needed */
+    font-size: 15rem; /* Adjust the size as needed */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin: 0; /* Remove margin to avoid extra space */
 }
@@ -24,4 +25,23 @@ p {
     font-size: 1.5rem; /* Adjust the size as needed */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-top: 1rem; /* Add space between heading and paragraph */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 0.875rem;
+    }
 }
