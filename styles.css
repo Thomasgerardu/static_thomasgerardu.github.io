@@ -11,20 +11,26 @@ body {
     background-image: url("./img/Echte-Belgische-Frieten.jpg");
     color: white;
     text-align: center;
-    flex-direction: column; /* This ensures the column layout */
-    padding: 10px; /* Add padding for small screens */
-    cursor: url('./img/frietcursor.png'), auto; /* Custom cursor */
+    flex-direction: column;
+    /* This ensures the column layout */
+    padding: 10px;
+    /* Add padding for small screens */
+    cursor: url('./img/frietcursor.png'), auto;
+    /* Custom cursor */
 }
 
-body.about-page {
-    background-image: url('./img/chips.jpg'); /* Adjust the path as necessary for the About page background */
+body.chips-page {
+    background-image: url('./img/chips.jpg');
+    /* Adjust the path as necessary for the About page background */
 }
 
 header {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent background */
     padding: 10px 0;
-    position: absolute; /* Position at the top */
+    position: absolute;
+    /* Position at the top */
     top: 0;
     left: 0;
 }
@@ -49,25 +55,31 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ffcc00; /* Highlight color on hover */
+    color: #ffcc00;
+    /* Highlight color on hover */
 }
 
 main {
-    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent background */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 50% transparent background */
     padding: 20px;
     border-radius: 10px;
 }
 
 h1 {
-    font-size: 10rem; /* Adjust the size as needed */
+    font-size: 10rem;
+    /* Adjust the size as needed */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin: 0 0 20px 0; /* Adjust margins as needed */
+    margin: 0 0 20px 0;
+    /* Adjust margins as needed */
 }
 
 p {
-    font-size: 1.5rem; /* Adjust the size as needed */
+    font-size: 1.5rem;
+    /* Adjust the size as needed */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin: 0 0 20px 0; /* Adjust margins as needed */
+    margin: 0 0 20px 0;
+    /* Adjust margins as needed */
 }
 
 table {
@@ -76,11 +88,14 @@ table {
     width: 50%;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid white;
 }
 
-th, td {
+th,
+td {
     padding: 10px;
     text-align: center;
     color: white;
@@ -92,9 +107,11 @@ th, td {
     h1 {
         font-size: 2rem;
     }
+
     p {
         font-size: 1rem;
     }
+
     table {
         width: 70%;
     }
@@ -104,9 +121,11 @@ th, td {
     h1 {
         font-size: 1.5rem;
     }
+
     p {
         font-size: 0.875rem;
     }
+
     table {
         width: 90%;
     }
