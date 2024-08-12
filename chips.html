@@ -3,43 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>chips Frieten?!</title>
+    <title>My Website</title>
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="chips-page">
-    <header>
-        <nav>
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./chips.html">Chips</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Chips</h1>
-        <p>Op deze pagina gaat het voornamelijk over chips.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Chips</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-    </main>
+<body>
+
+<div class="header">
+    <h1>Welcome to My Website</h1>
+</div>
+
+<div class="content">
+    <p>This website provides a dynamic table of items, where you can filter and sort based on various criteria. 
+    Explore the list of items below, and use the dropdowns to filter by taste and brand.</p><br><br>
+</div>
+
+<div class="table-container">
+    <label for="tasteFilter">Filter by Taste:</label>
+    <select id="tasteFilter">
+        <option value="">All</option>
+    </select>
+
+    <label for="brandFilter">Filter by Brand:</label>
+    <select id="brandFilter">
+        <option value="">All</option>
+    </select>
+
+    <table id="myTable" class="display">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Taste</th>
+                <th>Date</th>
+                <th>Pic</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Content will be populated by JavaScript -->
+        </tbody>
+    </table>
+</div>
+
+<!-- jQuery -->
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- DataTables JS -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+<!-- PapaParse (for CSV parsing) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+<!-- Custom JavaScript -->
+<script src="script.js"></script>
+
 </body>
 </html>

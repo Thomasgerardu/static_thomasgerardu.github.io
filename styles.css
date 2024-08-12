@@ -1,132 +1,68 @@
-/* General styles */
 body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url("./img/Echte-Belgische-Frieten.jpg");
-    color: white;
-    text-align: center;
-    flex-direction: column;
-    /* This ensures the column layout */
-    padding: 10px;
-    /* Add padding for small screens */
-    cursor: url('./img/frietcursor.png'), auto;
-    /* Custom cursor */
-}
-
-body.chips-page {
-    background-image: url('./img/chips.jpg');
-    /* Adjust the path as necessary for the About page background */
-}
-
-header {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    /* Semi-transparent background */
-    padding: 10px 0;
-    position: absolute;
-    /* Position at the top */
-    top: 0;
-    left: 0;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-nav ul li a:hover {
-    color: #ffcc00;
-    /* Highlight color on hover */
-}
-
-main {
-    background-color: rgba(0, 0, 0, 0.5);
-    /* 50% transparent background */
     padding: 20px;
-    border-radius: 10px;
 }
 
-h1 {
-    font-size: 10rem;
-    /* Adjust the size as needed */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin: 0 0 20px 0;
-    /* Adjust margins as needed */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-p {
-    font-size: 1.5rem;
-    /* Adjust the size as needed */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin: 0 0 20px 0;
-    /* Adjust margins as needed */
+.header h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.content {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 60%;
+    font-size: 18px;
+    color: #555;
+}
+
+.table-container {
+    margin: 0 auto;
+    width: 60%; /* This leaves 20% margin on each side */
 }
 
 table {
-    margin: 0 auto;
+    width: 100%;
     border-collapse: collapse;
-    width: 50%;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
 }
 
-table,
-th,
-td {
-    border: 1px solid white;
+th, td {
+    padding: 12px;
+    background-color: #fff;
+    border: 1px solid #ddd;
 }
 
-th,
-td {
-    padding: 10px;
-    text-align: center;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+th {
+    background-color: #f2f2f2;
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    table {
-        width: 70%;
-    }
+th.sorting, th.sorting_asc, th.sorting_desc {
+    background-color: #e0e0e0;
 }
 
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.5rem;
-    }
+img {
+    max-width: 60px;
+    height: auto;
+}
 
-    p {
-        font-size: 0.875rem;
-    }
+label, select {
+    margin-right: 10px;
+    font-size: 16px;
+}
 
-    table {
-        width: 90%;
-    }
+select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
 }
