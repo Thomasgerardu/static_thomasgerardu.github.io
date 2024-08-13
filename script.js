@@ -16,7 +16,7 @@ $(document).ready(function() {
                     '<td>' + row.Brand + '</td>' +
                     '<td>' + row.Taste + '</td>' +
                     '<td>' + row.Date + '</td>' +
-                    '<td><img src="' + row.Pic + '" alt="' + row.Name + '"></td>' +
+                    '<td><img src="' + row.Pic + '" alt="' + row.Name + '" class="thumbnail"></td>' +
                     '</tr>'
                 );
 
@@ -49,6 +49,29 @@ $(document).ready(function() {
 
             $('#brandFilter').on('change', function(){
                 table.column(1).search(this.value).draw();
+            });
+
+            // Modal logic
+            var modal = $('#imageModal');
+            var modalImg = $('#img01');
+            var span = $('.close');
+
+            // When the user clicks on the image, open the modal
+            $('#myTable').on('click', '.thumbnail', function(){
+                modal.css("display", "block");
+                modalImg.attr('src', $(this).attr('src'));
+            });
+
+            // When the user clicks on <span> (x), close the modal
+            span.on('click', function() {
+                modal.css("display", "none");
+            });
+
+            // Close the modal when clicking outside of the image
+            $(window).on('click', function(event) {
+                if ($(event.target).is(modal)) {
+                    modal.css("display", "none");
+                }
             });
         }
     });
