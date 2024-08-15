@@ -1,6 +1,6 @@
-Name,Brand,Taste,Date,Pic
-Chips,Doritos,Peperoni Pizza,13/06/2024,img\chips\doritos_loaded_peperoni_pizza.jpg
-Nibb it rings,Cheetos,?,21/06/2024,img\chips\IMG_20240813_185807.jpg
+Name,Brand,Taste,Date,Pic,Rating
+Chips,Doritos,Peperoni Pizza,13/06/2024,img\chips\doritos_loaded_peperoni_pizza.jpg,5
+Nibb it rings,Cheetos,?,21/06/2024,img\chips\IMG_20240813_185807.jpg,3
 Tubes,Croky,Nacho Cheese,25/05/2024,img\chips\IMG_20240813_185828.jpg
 Chips,Lays (Oven Baked),Cheese & Onion,22/07/2024,img\chips\IMG_20240813_185843.jpg
 Chips,Lays (Oven Baked),Mediteranean Herbs,25/06/2024,img\chips\IMG_20240813_185900.jpg

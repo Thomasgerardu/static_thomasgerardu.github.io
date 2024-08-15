@@ -1,140 +1,348 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
-    background-image: url(img/other/ai-generated-8864312_1280.png);
-    background-size: 100%;
-    background-position: center;
-    cursor: url(img/frietcursor.png) 25 35, auto;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #000;
 }
 
-.header {
-    background-color: rgba(128, 128, 128, 0.8);
-    margin: 20px auto;
-    width: 60%;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.grotetekst {
+    font-size: 100px;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    position: relative;
+    z-index: 1000;
+    /* Ensures navbar is above other elements */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+    min-width: 60px;
+    /* Adjust this value as necessary */
+}
+
+.navbar ul li a {
+    display: block;
+    /* Ensures the entire li element is clickable */
+    text-decoration: none;
+    color: #000;
+    font-weight: normal;
+    font-size: 30px;
+    padding: 5px 10px;
+    /* Adds clickable padding around the link */
+}
+
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    margin-top: 50px;
+}
+
+.case-study {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.case-study-text {
+    width: 45%;
+    padding-right: 20px;
+}
+
+.case-number {
+    font-size: 12px;
+    color: #666;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.case-study h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.case-study p {
+    font-size: 16px;
     margin-bottom: 20px;
-}
-
-.header h1 {
-    font-size: 36px;
+    line-height: 1.5;
     color: #333;
 }
 
-.content {
-    background-color: rgba(255, 255, 255, 0.8);
-    margin: 20px auto;
-    width: 60%;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin: 20px auto;
-    max-width: 60%;
-    font-size: 18px;
-    color: #555;
-}
-
-.table-container {
-    background-color: rgba(128, 128, 128, 0.8);
-    /* Grey color with 20% transparency */
-    margin: 20px auto;
-    /* Adds some margin around the table */
-    width: 60%;
-    /* This leaves 20% margin on each side */
-    border-radius: 10px;
-    /* Smooth edges with rounded corners */
-    padding: 10px;
-    /* Adds padding inside the container */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Optional: adds a subtle shadow for a more elevated look */
+.case-study-button:hover {
+    background-color: #333;
+    color: #fff;
 }
 
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 18px;
-    text-align: left;
+
+.case-study-image {
+    width: 50%;
+    padding-left: 50px;
+    text-align: right;
 }
 
-th,
-td {
-    padding: 12px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-th.sorting,
-th.sorting_asc,
-th.sorting_desc {
-    background-color: #e0e0e0;
-}
-
-img {
-    max-width: 60px;
+.case-study-image img {
+    max-width: 100%;
     height: auto;
+    border-radius: 30px;
 }
 
-label,
-select {
-    margin-right: 10px;
-    font-size: 16px;
+.vertical-separator {
+    width: 1px;
+    background-color: #000;
+    height: 100%;
+    position: absolute;
+    left: 47%;
 }
 
-select {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
+.separator {
+    border: none;
+    height: 1px;
+    background-color: #000;
+    margin: 50px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 12px;
+    color: #888;
+}
+
+.largechips {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    /* Center the container itself if it has a defined width */
+    padding: 20px 0;
+    /* Optional: Add padding to space it vertically */
+}
+
+.largechips img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* Ensure that the image is block-level so it doesn’t leave any extra space */
+    border-radius: 200px;
+}
+
+.coming-soon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 8px #000;
+    animation: weirdAnimation 5s infinite;
+}
+
+.glitch-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.glitch {
+    position: relative;
+    font-size: 100px;
+    font-weight: bold;
+    color: #FF2626;
+    letter-spacing: 3px;
+    z-index: 1;
+}
+
+.glitch:before,
+.glitch:after {
+    display: block;
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+}
+
+.glitch:before {
+    animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: #F5FF3D;
+    z-index: -1;
+}
+
+.glitch:after {
+    animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    color: #080008;
+    z-index: -2;
+}
+
+@keyframes glitch-it {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    to {
+        transform: translate(0);
+    }
 }
 
 /* The Modal (background) */
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    padding-top: 60px; 
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.9); 
-  }
-  
-  /* Modal Content (image) */
-  .modal-content {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Modal Content (image) */
+.modal-content {
     margin: auto;
     display: block;
     width: 80%;
     max-width: 700px;
-  }
-  
-  /* Close Button */
-  .close {
+}
+
+/* Close Button */
+.close {
     position: absolute;
     top: 15px;
     right: 25px;
     color: #fff;
     font-size: 35px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: #999;
     text-decoration: none;
     cursor: pointer;
-  }
-  
+}
+
+/* Ensures the images inside the table are smaller */
+#myTable img.thumbnail {
+    max-width: 60px;
+    /* Adjust this value to control the size */
+    height: auto;
+    /* Maintain the aspect ratio */
+    display: block;
+    /* Ensures there's no extra space around the image */
+    margin: 0 auto;
+    /* Centers the image within the table cell */
+}
+
+/* Add spacing between the filter elements */
+.table-container label {
+    display: inline-block;
+    /* margin-right: 20px; Adds space after the label */
+    margin-bottom: 20px; /* Adds space below the label */
+}
+
+.table-container select {
+    /* margin-right: 20px; Adds space after the select dropdown */
+    margin-bottom: 1px; /* Adds space below the select dropdown */
+}
+/* Align table headers to the left */
+#myTable th {
+    text-align: left;
+}
+
+/* Container for the filters and show entries */
+.table-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the left */
+    margin-bottom: 20px; /* Adds space between controls and table */
+    gap: 15px; /* Space between each control */
+}
+
+.table-controls label,
+.table-controls select {
+    margin: 0; /* Remove any default margins */
+}
+
+.dataTables_length {
+    margin-left: auto; /* Pushes the "Show entries" to the right */
+}
+
+/* Full-page overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Optional: Add a semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; /* Ensure the overlay is on top of everything */
+}
+
+/* Image inside the overlay */
+.overlay-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
