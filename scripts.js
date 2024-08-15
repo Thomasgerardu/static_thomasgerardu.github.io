@@ -1,13 +1,13 @@
 $(document).ready(function () {
-    console.log("Document is ready."); // Check if the document is ready
-    $('#overlay').on('click', function () {
-        $(this).fadeOut('slow');
-    });
-    $(document).on('keydown', function (event) {
-        if (event.key === "Escape") { // Check if the Escape key was pressed
-            $('#overlay').fadeOut('slow'); // Hide the overlay
-        }
-    });
+    // console.log("Document is ready."); // Check if the document is ready
+    // $('#overlay').on('click', function () {
+    //     $(this).fadeOut('slow');
+    // });
+    // $(document).on('keydown', function (event) {
+    //     if (event.key === "Escape") { // Check if the Escape key was pressed
+    //         $('#overlay').fadeOut('slow'); // Hide the overlay
+    //     }
+    // });
     // Load the CSV file
     Papa.parse("chips.csv", {
         download: true,
