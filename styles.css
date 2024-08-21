@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
     margin: 0;
     padding: 0;
@@ -11,19 +12,23 @@ body {
     margin: 0 auto;
 }
 
-/* header {
+.main {
+    margin-top: 50px;
+}
+
+/* Header and Logo */
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-} */
+}
 
 .logo {
     background-image: url(img/other/sitelogo.webp);
     background-size: contain; /* or cover, depending on the desired effect */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-position: left; /* Center the image */
-    
     width: 450px; /* Set the width of the logo container */
     height: 150px; /* Set the height of the logo container */
     font-size: 30px;
@@ -32,19 +37,7 @@ body {
     border-radius: 10px;
 }
 
-.grotetekst {
-    font-size: 100px;
-    font-weight: bold;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-}
-
+/* Navigation Bar */
 .navbar {
     position: relative;
     z-index: 1000;
@@ -59,7 +52,6 @@ header {
 
 .navbar ul li {
     margin-left: 20px;
-    /* Remove min-width as it may cause issues with varying image widths */
 }
 
 .navbar ul li a {
@@ -75,17 +67,11 @@ header {
     display: block;
 }
 
-
 .navbar ul li a:hover img {
     opacity: 0.8; /* Optional: adds a hover effect */
 }
 
-
-
-main {
-    margin-top: 50px;
-}
-
+/* Case Studies */
 .case-study {
     display: flex;
     align-items: center;
@@ -97,8 +83,6 @@ main {
     width: 45%;
     padding-right: 20px;
 }
-
-
 
 .case-study-image {
     width: 50%;
@@ -112,6 +96,7 @@ main {
     border-radius: 30px;
 }
 
+/* Separators */
 .vertical-separator {
     width: 1px;
     background-color: #000;
@@ -127,6 +112,7 @@ main {
     margin: 30px 0;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 20px 0;
@@ -134,25 +120,24 @@ footer {
     color: #888;
 }
 
+/* Large Chips */
 .largechips {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     margin: 0 auto;
-    /* Center the container itself if it has a defined width */
     padding: 20px 0;
-    /* Optional: Add padding to space it vertically */
 }
 
 .largechips img {
     max-width: 100%;
     height: auto;
     display: block;
-    /* Ensure that the image is block-level so it doesn’t leave any extra space */
     border-radius: 200px;
 }
 
+/* Coming Soon Section */
 .coming-soon {
     position: absolute;
     top: 50%;
@@ -165,6 +150,7 @@ footer {
     animation: weirdAnimation 5s infinite;
 }
 
+/* Glitch Effect */
 .glitch-wrapper {
     position: absolute;
     width: 100%;
@@ -232,7 +218,7 @@ footer {
     }
 }
 
-/* The Modal (background) */
+/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -243,11 +229,9 @@ footer {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Modal Content (image) */
 .modal-content {
     margin: auto;
     display: block;
@@ -255,7 +239,6 @@ footer {
     max-width: 700px;
 }
 
-/* Close Button */
 .close {
     position: absolute;
     top: 15px;
@@ -272,61 +255,87 @@ footer {
     cursor: pointer;
 }
 
-/* Ensures the images inside the table are smaller */
-#myTable img.thumbnail {
-    max-width: 60px;
-    /* Adjust this value to control the size */
-    height: auto;
-    /* Maintain the aspect ratio */
-    display: block;
-    /* Ensures there's no extra space around the image */
-    margin: 0 auto;
-    /* Centers the image within the table cell */
-}
-
-
-.table-container{
-    /* background-color: #3df9ff; */
+/* Table and Filters */
+.table-container {
     background-color: #e6bb58;
     border-radius: 30px;
     padding: 1em;
-    /* background-image: url(img/other/ai-generated-8864312_1280.png); */
 }
 
-/* Add spacing between the filter elements */
 .table-container label {
     display: inline-block;
-    /* margin-right: 20px; Adds space after the label */
     margin-bottom: 20px; /* Adds space below the label */
 }
 
 .table-container select {
-    /* margin-right: 20px; Adds space after the select dropdown */
     margin-bottom: 1px; /* Adds space below the select dropdown */
 }
-/* Align table headers to the left */
+
 #myTable th {
     text-align: left;
 }
 
-/* Container for the filters and show entries */
+#myTable img.thumbnail {
+    max-width: 60px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 .table-controls {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align items to the left */
-    margin-bottom: 20px; /* Adds space between controls and table */
-    gap: 15px; /* Space between each control */
-}
-
-.table-controls label,
-.table-controls select {
-    margin: 0; /* Remove any default margins */
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    gap: 15px;
 }
 
 .dataTables_length {
-    margin-left: auto; /* Pushes the "Show entries" to the right */
+    margin-left: auto;
 }
 
 .filter-container {
     margin: 1% 0;
+}
+
+/* Media Queries for Responsiveness */
+/* Adjustments for tablets and smaller screens */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Further adjustments for mobile screens */
+@media (max-width: 480px) {
+    .navbar ul li a img {
+        max-height: 60px;
+    }
+
+    .grotetekst {
+        font-size: 50px;
+    }
+}
+
+/* Specific Text Styles */
+.grotetekst {
+    font-size: 100px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
