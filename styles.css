@@ -69,10 +69,12 @@ header {
 }
 
 .navbar ul li a img {
-    height: 100px; /* Set the desired height */
-    object-fit: contain; /* Maintain aspect ratio */
-    display: block; /* Ensure the image is treated as a block-level element */
+    max-height: 100px;
+    width: auto; /* Ensures the width adjusts according to height, maintaining aspect ratio */
+    object-fit: contain;
+    display: block;
 }
+
 
 .navbar ul li a:hover img {
     opacity: 0.8; /* Optional: adds a hover effect */
