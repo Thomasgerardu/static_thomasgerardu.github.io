@@ -1,13 +1,4 @@
 $(document).ready(function () {
-    // console.log("Document is ready."); // Check if the document is ready
-    // $('#overlay').on('click', function () {
-    //     $(this).fadeOut('slow');
-    // });
-    // $(document).on('keydown', function (event) {
-    //     if (event.key === "Escape") { // Check if the Escape key was pressed
-    //         $('#overlay').fadeOut('slow'); // Hide the overlay
-    //     }
-    // });
     // Load the CSV file
     Papa.parse("chips.csv", {
         download: true,
@@ -58,6 +49,28 @@ $(document).ready(function () {
                 "dom": 'lrtip' // Removes the global search box
             });
 
+            // Hardcoded date and time in long date format
+            var datum_nu = new Date('2024-08-10').toLocaleDateString('nl-NL', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+
+            // Calculate the total number of rows (aantal)
+            var aantal = table.rows().count();
+
+            // Calculate the number of weeks since dattimestart
+            var datetimestart = new Date('2024-05-01'); // Start date as yyyy-mm-dd
+            var weeksPassed = Math.floor((new Date('2024-08-10') - datetimestart) / (1000 * 60 * 60 * 24 * 7)); // Use hardcoded current date
+
+            // Calculate x = aantal / weeksPassed
+            var x = (weeksPassed > 0) ? (aantal / weeksPassed).toFixed(2) : aantal;
+
+            // Update the text in the paragraph with strong tags
+            var text = `In deze tabel staan alle zakken chips die ik heb gegeten. Sommige zakken heb ik helemaal alleen gegeten, andere met vrienden. Ik werk de website eens in de zoveel tijd bij. Op het moment van schrijven (<strong>${datum_nu}</strong>) heb ik <strong>${aantal}</strong> zakken gegeten. Dat is ongeveer <strong>${x}</strong> zakken per week. Prima lijkt me zo. Ik ben verder nog aan de dunne kant dus geen probleem.`;
+
+            $('#chipsInfo').html(text); // Use .html() instead of .text() to render HTML
+
             // Custom filtering by Taste and Brand
             $('#tasteFilter').on('change', function () {
                 table.column(2).search(this.value).draw();
@@ -71,6 +84,7 @@ $(document).ready(function () {
             $('#searchBox').on('keyup', function () {
                 table.search(this.value).draw();
             });
+
             // Modal logic
             var modal = $('#imageModal');
             var modalImg = $('#img01');
@@ -100,6 +114,7 @@ $(document).ready(function () {
                     modal.css("display", "none");
                 }
             });
+
         }
     });
     // Function to generate star rating based on the number
@@ -115,4 +130,3 @@ $(document).ready(function () {
         return stars;
     }
 });
-
