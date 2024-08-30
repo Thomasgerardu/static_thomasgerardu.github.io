@@ -31,11 +31,11 @@ $(document).ready(function () {
             data.forEach(function (row) {
                 $('#myTable tbody').append(
                     '<tr>' +
-                    '<td>' + row.Name + '</td>' +
+                    // '<td>' + row.Name + '</td>' +
                     '<td>' + row.Brand + '</td>' +
                     '<td>' + row.Taste + '</td>' +
                     '<td>' + row.Date + '</td>' +
-                    '<td><img src="' + row.Pic + '" alt="' + row.Name + '" class="thumbnail"></td>' +
+                    '<td><img src="' + row.Pic + '" alt="' + row.Taste + '" class="thumbnail"></td>' +
                     '<td>' + generateStars(row.Rating) + '</td>' +
                     '</tr>'
                 );
@@ -49,8 +49,17 @@ $(document).ready(function () {
                 "dom": 'lrtip' // Removes the global search box
             });
 
+            var datum_startmoment = '2024-05-01'
+            var datum_bijgewerkt = '2024-08-10'
+
             // Hardcoded date and time in long date format
-            var datum_nu = new Date('2024-08-10').toLocaleDateString('nl-NL', {
+            var datum_nu = new Date(datum_bijgewerkt).toLocaleDateString('nl-NL', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+
+            var datum_start = new Date(datum_startmoment).toLocaleDateString('nl-NL', {
                 day: 'numeric',
                 month: 'long',
                 year: 'numeric'
@@ -60,24 +69,24 @@ $(document).ready(function () {
             var aantal = table.rows().count();
 
             // Calculate the number of weeks since dattimestart
-            var datetimestart = new Date('2024-05-01'); // Start date as yyyy-mm-dd
-            var weeksPassed = Math.floor((new Date('2024-08-10') - datetimestart) / (1000 * 60 * 60 * 24 * 7)); // Use hardcoded current date
+            var datetimestart = new Date(datum_startmoment); // Start date as yyyy-mm-dd
+            var weeksPassed = Math.floor((new Date(datum_bijgewerkt) - datetimestart) / (1000 * 60 * 60 * 24 * 7)); // Use hardcoded current date
 
             // Calculate x = aantal / weeksPassed
             var x = (weeksPassed > 0) ? (aantal / weeksPassed).toFixed(2) : aantal;
 
             // Update the text in the paragraph with strong tags
-            var text = `In deze tabel staan alle zakken chips die ik heb gegeten. Sommige zakken heb ik helemaal alleen gegeten, andere met vrienden. Ik werk de website eens in de zoveel tijd bij. Op het moment van schrijven (<strong>${datum_nu}</strong>) heb ik <strong>${aantal}</strong> zakken gegeten. Dat is ongeveer <strong>${x}</strong> zakken per week. Prima lijkt me zo. Ik ben verder nog aan de dunne kant dus geen probleem.`;
+            var text = `In deze tabel staan alle zakken chips die ik heb gegeten. Sommige zakken heb ik helemaal alleen gegeten, andere met vrienden. Ik werk de website eens in de zoveel tijd bij.Ik ben <strong>${datum_start}</strong> begonnen met de chipsverzameling. Op het moment van schrijven (<strong>${datum_nu}</strong>) heb ik <strong>${aantal}</strong> zakken gegeten. Dat is ongeveer <strong>${x}</strong> zakken per week. Prima lijkt me zo. Ik ben verder nog aan de dunne kant dus geen probleem.`;
 
             $('#chipsInfo').html(text); // Use .html() instead of .text() to render HTML
 
             // Custom filtering by Taste and Brand
             $('#tasteFilter').on('change', function () {
-                table.column(2).search(this.value).draw();
+                table.column(1).search(this.value).draw();
             });
 
             $('#brandFilter').on('change', function () {
-                table.column(1).search(this.value).draw();
+                table.column(0).search(this.value).draw();
             });
 
             // Link custom search box to DataTable search
