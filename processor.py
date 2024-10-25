@@ -63,7 +63,7 @@ class ChipsCSVProcessor:
 csv_processor = ChipsCSVProcessor('chips.csv')
 
 # Call rename_files function
-# csv_processor.rename_files()
+csv_processor.rename_files()
 
 # Call replace_placeholder_dates function
-csv_processor.replace_placeholder_dates('2024/08/10', '2024/09/13')
+csv_processor.replace_placeholder_dates('2024/09/13', '2024/10/25')
