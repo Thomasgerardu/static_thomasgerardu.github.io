@@ -17,6 +17,20 @@ class ChipsCSVProcessor:
         new_name = f"{brand}_{taste}".replace(" ", "_").replace("?", "Unknown").lower() + os.path.splitext(original_path)[1]
         return new_name
 
+    # Helper method to ensure unique filenames
+    def get_unique_filename(self, directory, base_filename):
+        filename, extension = os.path.splitext(base_filename)
+        counter = 1
+        
+        # Check if the file already exists
+        new_filename = f"{filename}{extension}"
+        while os.path.exists(os.path.join(directory, new_filename)):
+            # Increment the suffix each time a conflict is found
+            new_filename = f"{filename}_{counter}{extension}"
+            counter += 1
+            
+        return new_filename
+
     # Function to rename files and update the CSV
     def rename_files(self):
         for index, row in self.df.iterrows():
@@ -26,7 +40,10 @@ class ChipsCSVProcessor:
                 taste = row['Taste']
                 new_filename = self.create_new_filename(brand, taste, original_path)
                 directory = os.path.dirname(original_path)
-                new_path = os.path.join(directory, new_filename)
+                
+                # Use the helper function to ensure unique filename
+                unique_filename = get_unique_filename(directory, new_filename)
+                new_path = os.path.join(directory, unique_filename)
 
                 try:
                     os.rename(original_path, new_path)
@@ -42,6 +59,7 @@ class ChipsCSVProcessor:
         # Save the updated DataFrame to the CSV file
         self.df.to_csv(self.csv_path, index=False)
         print("Renaming and CSV update complete.")
+
 
     # Function to generate random dates for rows with 'x' in Date column
     def replace_placeholder_dates(self, start_date_str, end_date_str):
