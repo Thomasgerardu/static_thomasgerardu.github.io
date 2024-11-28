@@ -1,30 +1,30 @@
-Name,Brand,Taste,Date,Pic,Rating
-Tortilla,Doritos,Peperoni Pizza,13/06/2024,img\chips\doritos_loaded_peperoni_pizza.jpg,5.0
-Nibb it rings,Cheetos,Naturel,21/06/2024,img\chips\cheetos_naturel.jpg,3.0
-Tubes,Croky,Nacho Cheese,25/05/2024,img\chips\croky_nacho_cheese.jpg,5.0
-Chips,Lays (Oven Baked),Cheese & Onion,22/07/2024,img\chips\lays_(oven_baked)_cheese_&_onion.jpg,3.0
-Chips,Lays (Oven Baked),Mediteranean Herbs,25/06/2024,img\chips\lays_(oven_baked)_mediteranean_herbs.jpg,5.0
-Goals,Cheetos,Cheese,19/07/2024,img\chips\cheetos_cheese.jpg,4.0
-Chips,Snack Daily,Sweet Potato,03/08/2024,img\chips\snack_daily_sweet_potato.jpg,4.0
-Chips,Lays (MAX),Sourcream & Onion,21/06/2024,img\chips\lays_(max)_sourcream_&_onion.jpg,3.0
-Chips,Lays,Hamburger,10/07/2024,img\chips\lays_hamburger.jpg,3.0
-Ribbel,Albert Hein,Paprika,23/06/2024,img\chips\albert_hein_paprika.jpg,3.0
-Chips,Pirato,Ketchup,19/06/2024,img\chips\pirato_ketchup.jpg,2.0
-Chips,Pirato,Pepper & Salt,06/08/2024,img\chips\pirato_pepper_&_salt.jpg,3.0
-Chips,Pirato,Pickle,18/05/2024,img\chips\pirato_pickle.jpg,2.0
-Chips,Pirato,Naturel,05/07/2024,img\chips\pirato_naturel.jpg,2.0
-Chips,Chio,Pom-Bar,05/06/2024,img\chips\chio_pom-bar.jpg,4.0
-Chips,Brets,Pesto Mozarella,26/06/2024,img\chips\brets_pesto_mozarella.jpg,4.0
-Chips,Brets,Onion,26/05/2024,img\chips\brets_onion.jpg,3.0
-Chips,Brets,Camembert,17/06/2024,img\chips\brets_camembert.jpg,3.0
-Chips,Brets,Aioli,05/07/2024,img\chips\brets_aioli.jpg,4.0
-Chips,Brets,Yakitori,20/05/2024,img\chips\brets_yakitori.jpg,5.0
-Chips,Brets,Honey Mustard,25/06/2024,img\chips\brets_honey_mustard.jpg,4.0
-Tortilla,Doritos,Barbeque,03/08/2024,img\chips\doritos_barbeque.jpg,4.0
-Chips,Lays (MAX),Ketchup,22/07/2024,img\chips\lays_(max)_ketchup.jpg,5.0
-Chips,Croky,Naturel,26/07/2024,img\chips\croky_naturel.jpg,3.0
-Chips,O'Donnels,Cheddar Cheese,25/05/2024,img\chips\o'donnels_cheddar_cheese.jpg,2.0
-Chips,Cheetos,Sweet Chilli,22/07/2024,img\chips\cheetos_sweet_chilli.jpg,5.0
+Name,Brand,Taste,Date,Pic,Rating,Opmerking
+Tortilla,Doritos,Peperoni Pizza,13/06/2024,img\chips\doritos_loaded_peperoni_pizza.jpg,5.0,Crunch zoals verwacht van Doritos. Smaak precies goed.
+Nibb it rings,Cheetos,Naturel,21/06/2024,img\chips\cheetos_naturel.jpg,3.0,Rare vorm. Echt typisch gebakken lucht maar wel een classic dus respect. Smaak geeft geen voldoening.
+Tubes,Croky,Nacho Cheese,25/05/2024,img\chips\croky_nacho_cheese.jpg,5.0,Doet me denken aan chips die ik wel eens at bij mijn oma. Mooie zak. Goede smaak. Verrassend lekker.
+Chips,Lays (Oven Baked),Cheese & Onion,22/07/2024,img\chips\lays_(oven_baked)_cheese_&_onion.jpg,3.0,Ik fuck niet zo met Cheese & Union merk ik. Echt van die bulk poeders die ze erin flikkeren. Trieste smaak.
+Chips,Lays (Oven Baked),Mediteranean Herbs,25/06/2024,img\chips\lays_(oven_baked)_mediteranean_herbs.jpg,5.0,Ja hier worden we blij van. Lekker rustieke vibe en gewoon goede chips.
+Goals,Cheetos,Cheese,19/07/2024,img\chips\cheetos_cheese.jpg,4.0,Logaritmisch smaakprofiel. Eerste sec. verrukkelijk maar neemt daarna razendsnel af in smaak totdat je van die papperige zooi in je mond hebt. Je wilt meteen nog een hit. Echt iets voor verslaafden.
+Chips,Snack Daily,Sweet Potato,03/08/2024,img\chips\snack_daily_sweet_potato.jpg,4.0,Leuk geprobeerd en prima als je in een open minded bui bent in de zomer bijvoorbeeld. Prima uitgevoerd. Lekkerder kun je dit soort chips niet maken denk ik. 
+Chips,Lays (MAX),Sourcream & Onion,21/06/2024,img\chips\lays_(max)_sourcream_&_onion.jpg,3.0,Tja weer een Cheese & Union oftewel fabriekssmaak^2. Verder alles prima. 
+Chips,Lays,Hamburger,10/07/2024,img\chips\lays_hamburger.jpg,3.0,Redelijke debiele smaak op eerste gezicht maar verrast toch enigzins positief. Vandaar 3 sterren.
+Ribbel,Albert Hein,Paprika,23/06/2024,img\chips\albert_hein_paprika.jpg,3.0,Kinderen worden hier blij van maar geen verfijnde smaak. Sommige chips erg vettig en iets te veel paprika en zoutpoeder toegevoegd.
+Chips,Pirato,Ketchup,19/06/2024,img\chips\pirato_ketchup.jpg,2.0,Deze zak ziet er triest uit en is verder ook triest. Geen lol aan te beleven maar smaakt bij vlagen toch acceptabel.
+Chips,Pirato,Pepper & Salt,06/08/2024,img\chips\pirato_pepper_&_salt.jpg,3.0,Ik geloof dat Pirato het vak nog niet zo verstaat. Dit zou makkelijk en lekker moeten zijn maar is het niet. 
+Chips,Pirato,Pickle,18/05/2024,img\chips\pirato_pickle.jpg,2.0,Pirato snapt het niet. Chips is wel mooi dun maar verder alles triest.
+Chips,Pirato,Naturel,05/07/2024,img\chips\pirato_naturel.jpg,2.0,Gekocht omdat ik chips verzamel maar ik keek op tegen deze zak. Smaak is flauw. Crunch slecht. Zak lelijk. Triest. Leuk als je bijna dood gaat en in een boshut zit.
+Chips,Chio,Pom-Bar,05/06/2024,img\chips\chio_pom-bar.jpg,4.0,Altijd gezellig. Hoe maken ze dit? Wel echt gebakken lucht maar dit is een leuke chips voor met vrienden.
+Chips,Brets,Pesto Mozarella,26/06/2024,img\chips\brets_pesto_mozarella.jpg,4.0,"Goede smaak. Doet echt even denken aan een mozzarella gerecht. Dat is knap, zeker met een kaassmaak"
+Chips,Brets,Onion,26/05/2024,img\chips\brets_onion.jpg,3.0,Mooie zak en goede uiensmaak maar het blijft echt uipoeder. Toch een beetje triest.
+Chips,Brets,Camembert,17/06/2024,img\chips\brets_camembert.jpg,3.0,Respect voor de poging maar dit is toch nauwelijks Camembert te noemen?
+Chips,Brets,Aioli,05/07/2024,img\chips\brets_aioli.jpg,4.0,Erg zout maar toch wel een chips waar je van blijft eten
+Chips,Brets,Yakitori,20/05/2024,img\chips\brets_yakitori.jpg,5.0,WOW goede chips originele smaak. Niet zeker of dit nou overeenkomst met echt Yakitori smaak maar wel echt lekkere chips
+Chips,Brets,Honey Mustard,25/06/2024,img\chips\brets_honey_mustard.jpg,4.0,Wederom een goed idee van Brets. Lekkere smaak. Mooie crunch. Brets erg goed in smaken tot z'n recht laten komen
+Tortilla,Doritos,Barbeque,03/08/2024,img\chips\doritos_barbeque.jpg,4.0,Normaal hou ik hier niet van maar dit is een lekkere smaak. Verder alles typisch Doritos.
+Chips,Lays (MAX),Ketchup,22/07/2024,img\chips\lays_(max)_ketchup.jpg,5.0,Goede chips. Bestaat al lang en is echt een klassieker.
+Chips,Croky,Naturel,26/07/2024,img\chips\croky_naturel.jpg,3.0,Saai. Niet veel aan.
+Chips,O'Donnels,Cheddar Cheese,25/05/2024,img\chips\o'donnels_cheddar_cheese.jpg,2.0,"Met moeite de zak opgegeten. Zoutig, niet lekker, nepsmaak" 
+Chips,Cheetos,Sweet Chilli,22/07/2024,img\chips\cheetos_sweet_chilli.jpg,5.0,Ik ben redelijk biased naar Sweet Chilli omdat ik deze lekker vind dus moeilijk om kritisch te zijn. Je zou iets kunnen zeggen over de rare vorm maar het is ook wel eens leuk. 
 Chips,Deluxe,Sea Salt,26/06/2024,img\chips\deluxe_sea_salt.jpg,4.0
 Tortilla,Doritos,Nacho Cheese,17/06/2024,img\chips\doritos_nacho_cheese.jpg,5.0
 Chips,Deluxe,Sea Salt & Vinegar,12/08/2024,img\chips\deluxe_sea_salt_&_vinegar.jpg,4.0

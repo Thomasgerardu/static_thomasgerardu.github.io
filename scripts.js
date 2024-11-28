@@ -5,6 +5,18 @@ $(document).ready(function () {
         header: true,
         complete: function (results) {
             var data = results.data;
+
+            // Convert the Date column to ISO format for sorting
+            data.forEach(function (row) {
+                if (row.Date) {
+                    // Convert dd/mm/yyyy to yyyy-mm-dd
+                    var parts = row.Date.split('/');
+                    if (parts.length === 3) {
+                        row.Date = new Date(parts[2], parts[1] - 1, parts[0]).toISOString().split('T')[0];
+                    }
+                }
+            });
+
             var tasteOptions = new Set();
             var brandOptions = new Set();
 
@@ -31,11 +43,11 @@ $(document).ready(function () {
             data.forEach(function (row) {
                 $('#myTable tbody').append(
                     '<tr>' +
-                    // '<td>' + row.Name + '</td>' +
                     '<td>' + row.Brand + '</td>' +
                     '<td>' + row.Taste + '</td>' +
                     '<td>' + row.Date + '</td>' +
                     '<td><img src="' + row.Pic + '" alt="' + row.Taste + '" class="thumbnail"></td>' +
+                    '<td>' + row.Opmerking + '</td>' +
                     '<td>' + generateStars(row.Rating) + '</td>' +
                     '</tr>'
                 );
@@ -76,7 +88,7 @@ $(document).ready(function () {
             var x = (weeksPassed > 0) ? (aantal / weeksPassed).toFixed(2) : aantal;
 
             // Update the text in the paragraph with strong tags
-            var text = `In deze tabel staan alle zakken chips die ik heb gegeten. Sommige zakken heb ik helemaal alleen gegeten, andere met vrienden. Ik werk de website eens in de zoveel tijd bij.Ik ben <strong>${datum_start}</strong> begonnen met de chipsverzameling. Op het moment van schrijven (<strong>${datum_nu}</strong>) heb ik <strong>${aantal}</strong> zakken gegeten. Dat is ongeveer <strong>${x}</strong> zakken per week. Prima lijkt me zo. Ik ben verder nog aan de dunne kant dus geen probleem.`;
+            var text = `In deze tabel staan alle zakken chips die ik heb gegeten. Sommige zakken heb ik helemaal alleen gegeten, andere met vrienden. Ik werk de website eens in de zoveel tijd bij. Ik ben <strong>${datum_start}</strong> begonnen met de chipsverzameling. Op het moment van schrijven (<strong>${datum_nu}</strong>) heb ik <strong>${aantal}</strong> zakken gegeten. Dat is ongeveer <strong>${x}</strong> zakken per week. Prima lijkt me zo. Ik ben verder nog aan de dunne kant dus geen probleem.`;
 
             $('#chipsInfo').html(text); // Use .html() instead of .text() to render HTML
 
