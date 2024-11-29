@@ -61,8 +61,8 @@ $(document).ready(function () {
                 "dom": 'lrtip' // Removes the global search box
             });
 
-            var datum_startmoment = '2024-05-01'
-            var datum_bijgewerkt = '2024-10-25'
+            var datum_startmoment = '2024-05-01'// Niet aanpassen
+            var datum_bijgewerkt = '2024-11-29'
 
             // Hardcoded date and time in long date format
             var datum_nu = new Date(datum_bijgewerkt).toLocaleDateString('nl-NL', {

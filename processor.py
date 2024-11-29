@@ -42,7 +42,7 @@ class ChipsCSVProcessor:
                 directory = os.path.dirname(original_path)
                 
                 # Use the helper function to ensure unique filename
-                unique_filename = get_unique_filename(directory, new_filename)
+                unique_filename = self.get_unique_filename(directory, new_filename)
                 new_path = os.path.join(directory, unique_filename)
 
                 try:
@@ -84,4 +84,4 @@ csv_processor = ChipsCSVProcessor('chips.csv')
 csv_processor.rename_files()
 
 # Call replace_placeholder_dates function
-csv_processor.replace_placeholder_dates('2024/09/13', '2024/10/25')
+csv_processor.replace_placeholder_dates('2024/10/25', '2024/11/29')
