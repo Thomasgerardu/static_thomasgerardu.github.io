@@ -273,7 +273,7 @@ footer {
 
 #myTable th {
     text-align: left;
-    background-color: #e6bb58;
+    /* background-color: #e6bb58; */
 }
 
 #myTable img.thumbnail {
