@@ -257,9 +257,9 @@ footer {
 
 /* Table and Filters */
 .table-container {
-    background-color: #e6bb58;
+    /* background-color: #e6bb58; */
     border-radius: 30px;
-    padding: 1em;
+    /* padding: 1em; */
 }
 
 .table-container label {
@@ -273,6 +273,7 @@ footer {
 
 #myTable th {
     text-align: left;
+    background-color: #e6bb58;
 }
 
 #myTable img.thumbnail {
