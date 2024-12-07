@@ -37,6 +37,24 @@ header {
     border-radius: 10px;
 }
 
+.friet-background {
+    background: linear-gradient(rgba(248, 248, 248, 1), rgba(248, 248, 248, 0.6)), 
+                url(img/other/grotefriet.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.chips-background {
+    background: linear-gradient(rgba(248, 248, 248, 1), rgba(248, 248, 248, 0.2)), 
+                url(img/other/ai-generated-8864312_1280.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
 /* Navigation Bar */
 .navbar {
     position: relative;
@@ -111,6 +129,34 @@ header {
     background-color: #000;
     margin: 30px 0;
 }
+
+.separator_friet {
+    border: none;
+    height: 26px; /* Pas aan op basis van de hoogte van je afbeelding */
+    background-image: url(img/other/seperator_friet.png); /* Vervang met het pad naar jouw afbeelding */
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+    /* background-size: contain; Zorgt ervoor dat de afbeelding goed schaalt */
+    margin: 30px 0;
+}
+
+.separator_frikkedel {
+    border: none;
+    height: 26px; /* Pas aan op basis van de hoogte van je afbeelding */
+    background-image: url(img/other/seperator_frikkedel.png); /* Vervang met het pad naar jouw afbeelding */
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+    /* background-size: contain; Zorgt ervoor dat de afbeelding goed schaalt */
+    margin: 30px 0;
+}
+
+.stars {
+    font-size: 1.2em; /* Adjust size as needed */
+    color: gold; /* Use a gold color for stars */
+    line-height: 1.5; /* Space between lines */
+}
+
+
 
 /* Footer */
 footer {
