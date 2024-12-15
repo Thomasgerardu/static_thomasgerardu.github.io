@@ -84,4 +84,4 @@ csv_processor = ChipsCSVProcessor('chips.csv')
 csv_processor.rename_files()
 
 # Call replace_placeholder_dates function
-csv_processor.replace_placeholder_dates('2024/10/25', '2024/11/29')
+csv_processor.replace_placeholder_dates('2024/11/29', '2024/12/15')
