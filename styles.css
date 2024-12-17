@@ -329,6 +329,27 @@ footer {
     margin: 0 auto;
 }
 
+/* Style the Parameters column */
+#myTable td.parameters {
+    vertical-align: top; /* Align content to the top */
+    padding: 10px; /* Add spacing inside the cell */
+    line-height: 1.5; /* Adjust line spacing for better readability */
+    white-space: normal; /* Allow text to wrap */
+}
+
+/* Style individual parameter rows */
+.parameters .rating {
+    display: block; /* Each rating appears on a new line */
+    margin-bottom: 5px; /* Space between parameter lines */
+    font-size: 14px; /* Adjust the font size */
+}
+
+/* Add spacing around stars and improve readability */
+.parameters .rating::before {
+    content: "• "; /* Optional: Add bullet points for clarity */
+    color: #555; /* Slightly gray bullet points */
+}
+
 .table-controls {
     display: flex;
     align-items: center;

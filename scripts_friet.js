@@ -46,13 +46,14 @@ $(document).ready(function () {
                 $('#myTable tbody').append(
                     '<tr>' +
                     '<td>' + row.Locatie + '</td>' +
+                    '<td><a href="' + row.Link + '" target="_blank">Link</a></td>' +
                     '<td>' + row.Frituur + '</td>' +
                     '<td>' + row.Date + '</td>' +
                     '<td><img src="' + row.Pic + '" alt="' + row.Frituur + '" class="thumbnail"></td>' +
                     '<td>' + row.Opmerking + '</td>' +
-                    '<td>' +
+                    '<td class="parameters">' +
+                    'Taste: ' + generateStars(row.Taste) + '<br>' +
                     'Crunch: ' + generateStars(row.Crunch) + '<br>' +
-                    'Look: ' + generateStars(row.Look) + '<br>' +
                     'Presentation: ' + generateStars(row.Presentation) + '<br>' +
                     'Mayo: ' + generateStars(row.Mayo) +
                     '</td>' +
@@ -138,7 +139,7 @@ $(document).ready(function () {
 
     // Function to calculate the overall score (average of ratings)
     function calculateOverall(row) {
-        const total = parseFloat(row.Crunch) + parseFloat(row.Look) + parseFloat(row.Presentation) + parseFloat(row.Mayo);
+        const total = parseFloat(row.Taste) + parseFloat(row.Crunch) + parseFloat(row.Presentation) + parseFloat(row.Mayo);
         return (total / 4).toFixed(1); // Average rounded to 1 decimal
     }
 });
