@@ -329,26 +329,22 @@ footer {
     margin: 0 auto;
 }
 
-/* Style the Parameters column */
-#myTable td.parameters {
+/* Style the scores column */
+#myTable td.scores {
     vertical-align: top; /* Align content to the top */
     padding: 10px; /* Add spacing inside the cell */
-    line-height: 1.5; /* Adjust line spacing for better readability */
-    white-space: normal; /* Allow text to wrap */
+    line-height: 1.5; /* Adjust line spacing for readability */
+    white-space: nowrap; /* Prevent score+stars from wrapping to multiple lines */
 }
 
-/* Style individual parameter rows */
-.parameters .rating {
-    display: block; /* Each rating appears on a new line */
-    margin-bottom: 5px; /* Space between parameter lines */
-    font-size: 14px; /* Adjust the font size */
+/* Inline styling for each score line */
+#myTable td.scores .score-line {
+    display: flex; /* Use flexbox to keep score and stars on the same line */
+    justify-content: space-between; /* Align score and stars with spacing */
+    margin-bottom: 5px; /* Add space between lines */
+    white-space: nowrap; /* Ensure no line wrapping for individual lines */
 }
 
-/* Add spacing around stars and improve readability */
-.parameters .rating::before {
-    content: "• "; /* Optional: Add bullet points for clarity */
-    color: #555; /* Slightly gray bullet points */
-}
 
 .table-controls {
     display: flex;

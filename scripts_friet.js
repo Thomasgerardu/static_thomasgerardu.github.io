@@ -51,11 +51,11 @@ $(document).ready(function () {
                     '<td>' + row.Date + '</td>' +
                     '<td><img src="' + row.Pic + '" alt="' + row.Frituur + '" class="thumbnail"></td>' +
                     '<td>' + row.Opmerking + '</td>' +
-                    '<td class="parameters">' +
-                    'Taste: ' + generateStars(row.Taste) + '<br>' +
-                    'Crunch: ' + generateStars(row.Crunch) + '<br>' +
-                    'Presentation: ' + generateStars(row.Presentation) + '<br>' +
-                    'Mayo: ' + generateStars(row.Mayo) +
+                    '<td class="scores">' +
+                        '<div class="score-line">Taste: ' + generateStars(row.Taste) + '</div>' +
+                        '<div class="score-line">Crunch: ' + generateStars(row.Crunch) + '</div>' +
+                        '<div class="score-line">Presentation: ' + generateStars(row.Presentation) + '</div>' +
+                        '<div class="score-line">Mayo: ' + generateStars(row.Mayo) + '</div>' +
                     '</td>' +
                     '<td data-overall="' + overall + '">' + generateStars(overall) + '</td>' + // Overall score
                     '</tr>'
