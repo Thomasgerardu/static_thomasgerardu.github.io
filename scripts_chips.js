@@ -62,7 +62,7 @@ $(document).ready(function () {
             });
 
             var datum_startmoment = '2024-05-01'// Niet aanpassen
-            var datum_bijgewerkt = '2025-04-15'
+            var datum_bijgewerkt = '2025-06-07'
 
             // Hardcoded date and time in long date format
             var datum_nu = new Date(datum_bijgewerkt).toLocaleDateString('nl-NL', {
