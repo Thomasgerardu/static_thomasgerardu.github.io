@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Chip Reviews</title>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.13.6/sorting/datetime-moment.js"></script>
+    <style>
+        img {
+            max-width: 100px;
+        }
+
+        #commentModal {
+            display: none;
+            position: fixed;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            z-index: 999;
+        }
+
+        #starRating span {
+            font-size: 24px;
+            cursor: pointer;
+            color: #ccc;
+        }
+
+        #starRating span.selected {
+            color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Chip Reviews</h1>
+    <table id="chipTable" class="display"></table>
+
+    <!-- Comment Modal -->
+    <div id="commentModal">
+        <h3>Comments</h3>
+        <ul id="commentList"></ul>
+        <input type="text" id="commentName" placeholder="Your name" /><br />
+        <!-- New Star Rating Input -->
+        <div id="starRating">
+            <span data-value="1">★</span>
+            <span data-value="2">★</span>
+            <span data-value="3">★</span>
+            <span data-value="4">★</span>
+            <span data-value="5">★</span>
+        </div>
+        <textarea id="commentText" placeholder="Your comment"></textarea><br />
+        <button id="submitCommentBtn">Submit</button>
+        <button onclick="document.getElementById('commentModal').style.display='none'">Close</button>
+    </div>
+
+
+    <div id="imageModal" class="modal" style="display:none;">
+        <span class="close" style="position:absolute;top:10px;right:20px;font-size:32px;cursor:pointer;">&times;</span>
+        <img id="img01" style="display:block;max-width:90%;margin:auto;max-height:90vh;" />
+    </div>
+
+    <style>
+        .modal {
+            position: fixed;
+            z-index: 9999;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+    </style>
+
+
+    <!-- Firebase (Modular SDK) -->
+    <script type="module">
+        import { get } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-database.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+        import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-database.js";
+
+        $.fn.dataTable.moment('DD/MM/YYYY');
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCW9ncgY2xktBgSIOw_bQuHMX1ERG8rXOc",
+            authDomain: "chips-f9759.firebaseapp.com",
+            databaseURL: "https://chips-f9759-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "chips-f9759",
+            storageBucket: "chips-f9759.firebasestorage.app",
+            messagingSenderId: "458774611531",
+            appId: "1:458774611531:web:6ae0e6923ce6fa7f55efce"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        let currentChipId = null;
+        let currentRating = 0;
+
+        function openCommentModal(chipId) {
+            currentChipId = chipId;
+            document.getElementById("commentModal").style.display = "block";
+            loadComments(chipId);
+            currentRating = 0;
+            updateStarDisplay();
+        }
+
+        function loadComments(chipId) {
+            const list = document.getElementById("commentList");
+            list.innerHTML = "Loading...";
+            const commentsRef = ref(db, 'comments/' + chipId);
+
+            get(commentsRef).then((snapshot) => {
+                const data = snapshot.val();
+                list.innerHTML = "";
+                if (data) {
+                    Object.values(data).forEach(comment => {
+                        const rating = parseInt(comment.rating) || 0;
+                        const stars = "★".repeat(rating) + "☆".repeat(5 - rating);
+                        const li = document.createElement("li");
+                        li.textContent = `${comment.name}: ${stars} – ${comment.text}`;
+                        list.appendChild(li);
+                    });
+                } else {
+                    list.innerHTML = "<li>No comments yet.</li>";
+                }
+            });
+        }
+
+
+        document.querySelectorAll('#starRating span').forEach(star => {
+            star.addEventListener('click', () => {
+                currentRating = parseInt(star.dataset.value);
+                updateStarDisplay();
+            });
+        });
+
+        function updateStarDisplay() {
+            document.querySelectorAll('#starRating span').forEach(star => {
+                const val = parseInt(star.dataset.value);
+                if (val <= currentRating) {
+                    star.classList.add('selected');
+                } else {
+                    star.classList.remove('selected');
+                }
+            });
+        }
+
+        function generateStars(rating) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= rating) {
+                    stars += '&#9733;'; // Full star
+                } else {
+                    stars += '&#9734;'; // Empty star
+                }
+            }
+            return stars;
+        }
+
+
+        document.getElementById("submitCommentBtn").addEventListener("click", () => {
+            const name = document.getElementById("commentName").value.trim();
+            const text = document.getElementById("commentText").value.trim();
+            if (!name || !text) return alert("Ja hallo je kunt niet raten zonder je naam te noemen he, anoniempje!");
+
+            const commentsRef = ref(db, 'comments/' + currentChipId);
+            push(commentsRef, { name, text, rating: currentRating });
+
+            // Clear form
+            document.getElementById("commentName").value = "";
+            document.getElementById("commentText").value = "";
+            currentRating = 0;
+            updateStarDisplay();
+            loadComments(currentChipId);
+        });
+
+        Papa.parse('chips.csv', {
+            download: true,
+            header: true,
+            complete: function (results) {
+                const data = results.data;
+
+                const tableData = data.map(row => {
+                    const img = `<img src="${row.Pic}" class="thumbnail" alt="chip" />`;
+                    const button = `<button onclick="openCommentModal(${row.ID})">Comments</button>`;
+                    return [
+                        row.ID,
+                        row.Name,
+                        row.Brand,
+                        row.Taste,
+                        row.Date,
+                        img,
+                        generateStars(parseFloat(row.Rating)),
+                        row.Opmerking,
+                        button
+                    ];
+                });
+
+                const table = $('#chipTable').DataTable({
+                    data: tableData,
+                    columns: [
+                        { title: "ID" },
+                        { title: "Name" },
+                        { title: "Brand" },
+                        { title: "Taste" },
+                        { title: "Date" },
+                        { title: "Pic" },
+                        { title: "Rating" },
+                        { title: "Opmerking" },
+                        { title: "Comments" }
+                    ]
+                });
+
+                const modal = $('#imageModal');
+                const modalImg = $('#img01');
+                const span = $('.close');
+
+                // Open modal on image click
+                $('#chipTable').on('click', '.thumbnail', function () {
+                    modal.css("display", "block");
+                    modalImg.attr('src', $(this).attr('src'));
+                });
+
+                // Close on Escape key
+                $(window).on('keydown', function (event) {
+                    if (event.key === "Escape") {
+                        modal.css("display", "none");
+                    }
+                });
+
+                // Close on "×" click
+                span.on('click', function () {
+                    modal.css("display", "none");
+                });
+
+                // Close when clicking outside the image
+                $(window).on('click', function (event) {
+                    if ($(event.target).is(modal)) {
+                        modal.css("display", "none");
+                    }
+                });
+                window.openCommentModal = openCommentModal;     // ✅ You can now add your modal logic and filters here if needed
+            }
+        });
+    </script>
+</body>
+
+</html>

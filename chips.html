@@ -2,257 +2,89 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Chip Reviews</title>
-    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-    <script src="https://cdn.datatables.net/plug-ins/1.13.6/sorting/datetime-moment.js"></script>
-    <style>
-        img {
-            max-width: 100px;
-        }
-
-        #commentModal {
-            display: none;
-            position: fixed;
-            top: 10%;
-            left: 10%;
-            width: 80%;
-            background: #fff;
-            border: 1px solid #ccc;
-            padding: 20px;
-            z-index: 999;
-        }
-
-        #starRating span {
-            font-size: 24px;
-            cursor: pointer;
-            color: #ccc;
-        }
-
-        #starRating span.selected {
-            color: gold;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chips</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
 </head>
 
-<body>
-    <h1>Chip Reviews</h1>
-    <table id="chipTable" class="display"></table>
+<body class="chips-background"></body>
+    <div class="container">
+        <header>
+            <div class="logo"></div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html"><img src="img/other/navbar_aardappel.png"></a></li>
+                    <li><a href="friet.html"><img src="img/other/navbar_friet.png"></a></li>
+                    <li><a href="chips.html"><img src="img/other/navbar_chips.png"></a></li>
+                </ul>
+            </nav>
+        </header>
+        <hr class="separator_friet">
+        <!-- Updated Header Section -->
+        <section class="main-header">
+            <h1>Chips zakken database</h1>
+            <p> Toen ik 30 werd bedacht ik me dat het tijd werd voor een echte hobby: Chips zakken verzamelen. Ik heb
+                mijn hele leven al veel van aardappels gehouden en chips is vaak gemaakt van aardappels, al heb je ook
+                superveel maispoederchips. Ik discrimineer niet tussen chips en vind alle chips bewondernswaardig. Sinds
+                ik ben begonnen met verzamelen ben ik er achter gekomen dat er ontzettend veel soorten chips zijn, maar
+                dat er eigenlijk maar een paar smaken zijn die zich echt goed lenen voor chips. Zo heb je ontzettend
+                veel kaassmaak varianten, die allemaal kazig smaken en eigenlijk vooral zout.
+            </p>
+            <p id="chipsInfo"></p>
+        </section>
+        <hr class="separator_friet">
+        <div class="filter-container">
+            <label for="tasteFilter">Filter by Taste:</label>
+            <select id="tasteFilter">
+                <option value="">Alle smaken</option>
+                <!-- Add more taste options here -->
+            </select>
 
-    <!-- Comment Modal -->
-    <div id="commentModal">
-        <h3>Comments</h3>
-        <ul id="commentList"></ul>
-        <input type="text" id="commentName" placeholder="Your name" /><br />
-        <!-- New Star Rating Input -->
-        <div id="starRating">
-            <span data-value="1">★</span>
-            <span data-value="2">★</span>
-            <span data-value="3">★</span>
-            <span data-value="4">★</span>
-            <span data-value="5">★</span>
+            <label for="brandFilter">Filter by Brand:</label>
+            <select id="brandFilter">
+                <option value="">Alle merken</option>
+                <!-- Add more brand options here -->
+            </select>
+
+            <label for="searchBox">Search:</label>
+            <input type="text" id="searchBox" placeholder="Zoek hier chips...">
+
+            <span class="separator"></span>
+
+            <!-- Keep the default DataTables length menu -->
         </div>
-        <textarea id="commentText" placeholder="Your comment"></textarea><br />
-        <button id="submitCommentBtn">Submit</button>
-        <button onclick="document.getElementById('commentModal').style.display='none'">Close</button>
-    </div>
+        <div class="table-container">
+            <table id="myTable" class="display">
+                <thead>
+                    <tr>
+                        <!-- <th>Name</th> -->
+                        <th>Brand</th>
+                        <th>Taste</th>
+                        <th>Date</th>
+                        <th>Pic</th>
+                        <th>Opmerking</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Content will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <hr class="separator_friet">
+        <!-- Modal Section -->
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+        </div>
 
-
-    <div id="imageModal" class="modal" style="display:none;">
-        <span class="close" style="position:absolute;top:10px;right:20px;font-size:32px;cursor:pointer;">&times;</span>
-        <img id="img01" style="display:block;max-width:90%;margin:auto;max-height:90vh;" />
-    </div>
-
-    <style>
-        .modal {
-            position: fixed;
-            z-index: 9999;
-            padding-top: 60px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-    </style>
-
-
-    <!-- Firebase (Modular SDK) -->
-    <script type="module">
-        import { get } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-database.js";
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
-        import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-database.js";
-
-        $.fn.dataTable.moment('DD/MM/YYYY');
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyCW9ncgY2xktBgSIOw_bQuHMX1ERG8rXOc",
-            authDomain: "chips-f9759.firebaseapp.com",
-            databaseURL: "https://chips-f9759-default-rtdb.europe-west1.firebasedatabase.app",
-            projectId: "chips-f9759",
-            storageBucket: "chips-f9759.firebasestorage.app",
-            messagingSenderId: "458774611531",
-            appId: "1:458774611531:web:6ae0e6923ce6fa7f55efce"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
-
-        let currentChipId = null;
-        let currentRating = 0;
-
-        function openCommentModal(chipId) {
-            currentChipId = chipId;
-            document.getElementById("commentModal").style.display = "block";
-            loadComments(chipId);
-            currentRating = 0;
-            updateStarDisplay();
-        }
-
-        function loadComments(chipId) {
-            const list = document.getElementById("commentList");
-            list.innerHTML = "Loading...";
-            const commentsRef = ref(db, 'comments/' + chipId);
-
-            get(commentsRef).then((snapshot) => {
-                const data = snapshot.val();
-                list.innerHTML = "";
-                if (data) {
-                    Object.values(data).forEach(comment => {
-                        const rating = parseInt(comment.rating) || 0;
-                        const stars = "★".repeat(rating) + "☆".repeat(5 - rating);
-                        const li = document.createElement("li");
-                        li.textContent = `${comment.name}: ${stars} – ${comment.text}`;
-                        list.appendChild(li);
-                    });
-                } else {
-                    list.innerHTML = "<li>No comments yet.</li>";
-                }
-            });
-        }
-
-
-        document.querySelectorAll('#starRating span').forEach(star => {
-            star.addEventListener('click', () => {
-                currentRating = parseInt(star.dataset.value);
-                updateStarDisplay();
-            });
-        });
-
-        function updateStarDisplay() {
-            document.querySelectorAll('#starRating span').forEach(star => {
-                const val = parseInt(star.dataset.value);
-                if (val <= currentRating) {
-                    star.classList.add('selected');
-                } else {
-                    star.classList.remove('selected');
-                }
-            });
-        }
-
-        function generateStars(rating) {
-            let stars = '';
-            for (let i = 1; i <= 5; i++) {
-                if (i <= rating) {
-                    stars += '&#9733;'; // Full star
-                } else {
-                    stars += '&#9734;'; // Empty star
-                }
-            }
-            return stars;
-        }
-
-
-        document.getElementById("submitCommentBtn").addEventListener("click", () => {
-            const name = document.getElementById("commentName").value.trim();
-            const text = document.getElementById("commentText").value.trim();
-            if (!name || !text) return alert("Ja hallo je kunt niet raten zonder je naam te noemen he, anoniempje!");
-
-            const commentsRef = ref(db, 'comments/' + currentChipId);
-            push(commentsRef, { name, text, rating: currentRating });
-
-            // Clear form
-            document.getElementById("commentName").value = "";
-            document.getElementById("commentText").value = "";
-            currentRating = 0;
-            updateStarDisplay();
-            loadComments(currentChipId);
-        });
-
-        Papa.parse('chips.csv', {
-            download: true,
-            header: true,
-            complete: function (results) {
-                const data = results.data;
-
-                const tableData = data.map(row => {
-                    const img = `<img src="${row.Pic}" class="thumbnail" alt="chip" />`;
-                    const button = `<button onclick="openCommentModal(${row.ID})">Comments</button>`;
-                    return [
-                        row.ID,
-                        row.Name,
-                        row.Brand,
-                        row.Taste,
-                        row.Date,
-                        img,
-                        generateStars(parseFloat(row.Rating)),
-                        row.Opmerking,
-                        button
-                    ];
-                });
-
-                const table = $('#chipTable').DataTable({
-                    data: tableData,
-                    columns: [
-                        { title: "ID" },
-                        { title: "Name" },
-                        { title: "Brand" },
-                        { title: "Taste" },
-                        { title: "Date" },
-                        { title: "Pic" },
-                        { title: "Rating" },
-                        { title: "Opmerking" },
-                        { title: "Comments" }
-                    ]
-                });
-
-                const modal = $('#imageModal');
-                const modalImg = $('#img01');
-                const span = $('.close');
-
-                // Open modal on image click
-                $('#chipTable').on('click', '.thumbnail', function () {
-                    modal.css("display", "block");
-                    modalImg.attr('src', $(this).attr('src'));
-                });
-
-                // Close on Escape key
-                $(window).on('keydown', function (event) {
-                    if (event.key === "Escape") {
-                        modal.css("display", "none");
-                    }
-                });
-
-                // Close on "×" click
-                span.on('click', function () {
-                    modal.css("display", "none");
-                });
-
-                // Close when clicking outside the image
-                $(window).on('click', function (event) {
-                    if ($(event.target).is(modal)) {
-                        modal.css("display", "none");
-                    }
-                });
-                window.openCommentModal = openCommentModal;     // ✅ You can now add your modal logic and filters here if needed
-            }
-        });
-    </script>
+        <!-- JavaScript Files -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+        <script src="scripts_chips.js"></script> <!-- Link to your JavaScript file -->
 </body>
 
 </html>
