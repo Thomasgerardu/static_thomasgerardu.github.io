@@ -93,6 +93,17 @@ function generateStars(rating) {
     return stars;
 }
 
+// function generateStars(rating) {
+//     if (!rating || rating <= 0) return '';
+//     let stars = '';
+//     for (let i = 1; i <= rating; i++) {
+//         stars += `<img src="img/other/potato_chip.png" class="star-icon" alt="★">`;
+//     }
+//     return stars;
+// }
+
+
+
 // Load CSV and render table
 Papa.parse('chips.csv', {
     download: true,
@@ -100,112 +111,122 @@ Papa.parse('chips.csv', {
     complete: function (results) {
         const data = results.data;
 
-        const tableData = data.map(row => {
-            const img = `<img src="${row.Pic}" class="thumbnail" alt="chip" />`;
-            const button = `<button onclick="openCommentModal(${row.ID})">Comments</button>`;
-            return [
-                row.ID,
-                row.Name,
-                row.Brand,
-                row.Taste,
-                row.Date,
-                img,
-                generateStars(parseFloat(row.Rating)),
-                row.Opmerking,
-                button
-            ];
+        const promises = data.map(row => {
+            const commentsRef = ref(db, 'comments/' + row.ID);
+            return get(commentsRef).then(snapshot => {
+                const commentsData = snapshot.val();
+                const commentCount = commentsData ? Object.keys(commentsData).length : 0;
+
+                const img = `<img src="${row.Pic}" class="thumbnail" alt="chip" />`;
+                const button = `<button onclick="openCommentModal(${row.ID})">Comments (${commentCount})</button>`;
+
+                return [
+                    row.ID,
+                    // row.Name,
+                    row.Brand,
+                    row.Taste,
+                    row.Date,
+                    img,
+                    generateStars(parseFloat(row.Rating)),
+                    row.Opmerking,
+                    button
+                ];
+            });
         });
 
-        const table = $('#chipTable').DataTable({
-            data: tableData,
-            columns: [
-                { title: "ID" },
-                { title: "Name" },
-                { title: "Brand" },
-                { title: "Taste" },
-                { title: "Date" },
-                { title: "Pic" },
-                { title: "Rating" },
-                { title: "Opmerking" },
-                { title: "Comments" }
-            ],
-            searching: false,
-            lengthChange: false
-        });
+        Promise.all(promises).then(tableData => {
+            const table = $('#chipTable').DataTable({
+                data: tableData,
+                columns: [
+                    { title: "ID" },
+                    // { title: "Name" },
+                    { title: "Brand" },
+                    { title: "Taste" },
+                    { title: "Date" },
+                    { title: "Pic" },
+                    { title: "Rating" },
+                    { title: "Opmerking" },
+                    { title: "Comments" }
+                ],
+                // searching: false,
+                lengthChange: false
+            });
 
-        // Custom filter
-        const tasteOptions = new Set();
-        const brandOptions = new Set();
-        data.forEach(row => {
-            tasteOptions.add(row.Taste);
-            brandOptions.add(row.Brand);
-        });
+            // Custom filter
+            const tasteOptions = new Set();
+            const brandOptions = new Set();
+            data.forEach(row => {
+                tasteOptions.add(row.Taste);
+                brandOptions.add(row.Brand);
+            });
 
-        // Populate Taste filter
-        Array.from(tasteOptions).sort().forEach(taste => {
-            $('#tasteFilter').append(`<option value="${taste}">${taste}</option>`);
-        });
+            // Populate Taste filter
+            Array.from(tasteOptions).sort().forEach(taste => {
+                $('#tasteFilter').append(`<option value="${taste}">${taste}</option>`);
+            });
 
-        // Populate Brand filter
-        Array.from(brandOptions).sort().forEach(brand => {
-            $('#brandFilter').append(`<option value="${brand}">${brand}</option>`);
-        });
+            // Populate Brand filter
+            Array.from(brandOptions).sort().forEach(brand => {
+                $('#brandFilter').append(`<option value="${brand}">${brand}</option>`);
+            });
 
-        // Add filtering behavior
-        $('#brandFilter').on('change', function () {
-            table.column(2).search(this.value).draw(); // Brand = column 2
-        });
+            // Add filtering behavior
+            $('#brandFilter').on('change', function () {
+                console.log("Filtering brand with value:", this.value);
+                table.column(1).search(this.value).draw(); // Brand = column 2
+            });
 
-        $('#tasteFilter').on('change', function () {
-            table.column(3).search(this.value).draw(); // Taste = column 3
-        });
+            $('#tasteFilter').on('change', function () {
+                console.log("Filtering taste with value:", this.value);
+                table.column(2).search(this.value).draw(); // Taste = column 3
+            });
 
-        $('#searchBox').on('keyup', function () {
-            table.search(this.value).draw();
-        });
+            $('#searchBox').on('keyup', function () {
+                table.search(this.value).draw();
+            });
 
 
-        // Modal logic
-        const modal = $('#imageModal');
-        const modalImg = $('#img01');
-        const span = $('.close');
+            // Modal logic
+            const modal = $('#imageModal');
+            const modalImg = $('#img01');
+            const span = $('.close');
 
-        $('#chipTable').on('click', '.thumbnail', function () {
-            modal.css("display", "block");
-            modalImg.attr('src', $(this).attr('src'));
-        });
+            $('#chipTable').on('click', '.thumbnail', function () {
+                modal.css("display", "block");
+                modalImg.attr('src', $(this).attr('src'));
+            });
 
-        $(window).on('keydown', function (event) {
-            if (event.key === "Escape") modal.css("display", "none");
-        });
+            $(window).on('keydown', function (event) {
+                if (event.key === "Escape") modal.css("display", "none");
+            });
 
-        span.on('click', function () {
-            modal.css("display", "none");
-        });
+            span.on('click', function () {
+                modal.css("display", "none");
+            });
 
-        $(window).on('click', function (event) {
-            if ($(event.target).is(modal)) modal.css("display", "none");
-        });
+            $(window).on('click', function (event) {
+                if ($(event.target).is(modal)) modal.css("display", "none");
+            });
 
-        // Logic for text about chipstable
-        const datum_startmoment = '2024-05-01';
-        const datum_bijgewerkt = '2025-04-15';
+            // Logic for text about chipstable
+            const datum_startmoment = '2024-05-01';
+            const datum_bijgewerkt = '2025-04-15';
 
-        const datum_nu = new Date(datum_bijgewerkt).toLocaleDateString('nl-NL', {
-            day: 'numeric', month: 'long', year: 'numeric'
-        });
-        const datum_start = new Date(datum_startmoment).toLocaleDateString('nl-NL', {
-            day: 'numeric', month: 'long', year: 'numeric'
-        });
+            const datum_nu = new Date(datum_bijgewerkt).toLocaleDateString('nl-NL', {
+                day: 'numeric', month: 'long', year: 'numeric'
+            });
+            const datum_start = new Date(datum_startmoment).toLocaleDateString('nl-NL', {
+                day: 'numeric', month: 'long', year: 'numeric'
+            });
 
-        const aantal = table.rows().count();
-        const datetimestart = new Date(datum_startmoment);
-        const weeksPassed = Math.floor((new Date(datum_bijgewerkt) - datetimestart) / (1000 * 60 * 60 * 24 * 7));
-        const x = (weeksPassed > 0) ? (aantal / weeksPassed).toFixed(2) : aantal;
+            const aantal = table.rows().count();
+            const datetimestart = new Date(datum_startmoment);
+            const weeksPassed = Math.floor((new Date(datum_bijgewerkt) - datetimestart) / (1000 * 60 * 60 * 24 * 7));
+            const x = (weeksPassed > 0) ? (aantal / weeksPassed).toFixed(2) : aantal;
 
-        const text = `In deze tabel staan alle zakken chips die ik heb gegeten. Sommige zakken heb ik helemaal alleen gegeten, andere met vrienden. Ik werk de website eens in de zoveel tijd bij. Ik ben <strong>${datum_start}</strong> begonnen met de chipsverzameling. Op het moment van schrijven (<strong>${datum_nu}</strong>) heb ik <strong>${aantal}</strong> zakken gegeten. Dat is ongeveer <strong>${x}</strong> zakken per week. Prima lijkt me zo. Ik ben verder nog aan de dunne kant dus geen probleem.`;
+            const text = `In deze tabel staan alle zakken chips die ik heb gegeten. Sommige zakken heb ik helemaal alleen gegeten, andere met vrienden. Ik werk de website eens in de zoveel tijd bij. Ik ben <strong>${datum_start}</strong> begonnen met de chipsverzameling. Op het moment van schrijven (<strong>${datum_nu}</strong>) heb ik <strong>${aantal}</strong> zakken gegeten. Dat is ongeveer <strong>${x}</strong> zakken per week. Prima lijkt me zo. Ik ben verder nog aan de dunne kant dus geen probleem.`;
 
-        $('#chipsInfo').html(text);
-
-    }
+            $('#chipsInfo').html(text);
+              });
+        }
 });
