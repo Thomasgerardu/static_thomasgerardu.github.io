@@ -1,0 +1,184 @@
+/* Font */
+@font-face {
+    font-family: 'quicksand';
+    src: url('font/quicksand.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-family: 'quicksand', sans-serif;
+    font-size: 72px;
+    font-weight: normal;
+    text-align: center;
+    /* background-image: url(img/other/olie.jpg); */
+}
+
+img {
+    max-width: 100px;
+}
+
+#commentModal {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 999;
+}
+
+#starRating span {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+#starRating span.selected {
+    color: gold;
+}
+
+.modal {
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.filters {
+    margin: 1% 0;
+}
+
+.separator_friet {
+    border: none;
+    height: 26px;
+    background-image: url(img/other/seperator_friet.png);
+    margin: 30px 0;
+}
+
+.chips-background {
+    background: linear-gradient(rgba(248, 248, 248, 1), rgba(248, 248, 248, 0.2)),
+        url(img/other/ai-generated-8864312_1280.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#chipTable tbody tr {
+    background-color: #ffffff;
+}
+
+#chipTable thead {
+    background-image: url(img/other/olie.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.dataTables_filter {
+    display: none;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.star-icon {
+    width: 13px;
+    height: 13px;
+    /* margin-right: 1px; */
+    vertical-align: middle;
+}
+
+
+/* Navbar */
+.simple-navbar {
+    padding: 10px 0;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.simple-navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: right;
+    gap: 40px;
+}
+
+.simple-navbar li a img {
+    height: 80px;
+    transition: transform 0.2s;
+}
+
+.simple-navbar li a img:hover {
+    transform: scale(1.1);
+}
+
+.grotetekst {
+    font-size: 80px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* Case Studies */
+.case-study {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.case-study-text {
+    width: 45%;
+    padding-right: 20px;
+}
+
+.case-study-image {
+    width: 50%;
+    padding-left: 50px;
+    text-align: right;
+}
+
+.case-study-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 30px;
+}
+
+/* Separators */
+.vertical-separator {
+    width: 1px;
+    background-color: #000;
+    height: 100%;
+    position: absolute;
+    left: 47%;
+}
+
+.logo {
+    background-image: url(img/other/sitelogo.webp);
+
+    background-position: left; /* Center the image */
+    width: 450px; /* Set the width of the logo container */
+    height: 150px; /* Set the height of the logo container */
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
