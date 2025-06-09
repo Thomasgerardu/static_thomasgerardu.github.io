@@ -43,7 +43,7 @@ $(document).ready(function () {
             data.forEach(function (row) {
                 const overall = calculateOverall(row); // Calculate overall rating dynamically
 
-                $('#myTable tbody').append(
+                $('#datatable tbody').append(
                     '<tr>' +
                     '<td>' + row.Locatie + '</td>' +
                     '<td><a href="' + row.Link + '" target="_blank">Link</a></td>' +
@@ -63,10 +63,11 @@ $(document).ready(function () {
             });
 
             // Initialize DataTable
-            var table = $('#myTable').DataTable({
+            var table = $('#datatable').DataTable({
                 "paging": true,
                 "info": false,
                 "searching": true, // Enable global search
+                "lengthChange": false, // Disable length change dropdown  
                 "dom": 'lrtip', // Removes the global search box
                 "columnDefs": [
                     {
@@ -97,7 +98,7 @@ $(document).ready(function () {
             var span = $('.close');
 
             // When the user clicks on the image, open the modal
-            $('#myTable').on('click', '.thumbnail', function () {
+            $('#datatable').on('click', '.thumbnail', function () {
                 modal.css("display", "block");
                 modalImg.attr('src', $(this).attr('src'));
             });

@@ -2,89 +2,92 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chips</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+  <meta charset="UTF-8" />
+  <title>Chip Reviews</title>
+
+  <!-- STYLESHEETS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="styles2.css">
+
+  <!-- LIBRARIES -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script src="https://cdn.datatables.net/plug-ins/1.13.6/sorting/datetime-moment.js"></script>
 </head>
 
-<body class="chips-background"></body>
-    <div class="container">
-        <header>
-            <div class="logo"></div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html"><img src="img/other/navbar_aardappel.png"></a></li>
-                    <li><a href="friet.html"><img src="img/other/navbar_friet.png"></a></li>
-                    <li><a href="chips.html"><img src="img/other/navbar_chips.png"></a></li>
-                </ul>
-            </nav>
-        </header>
-        <hr class="separator_friet">
-        <!-- Updated Header Section -->
-        <section class="main-header">
-            <h1>Chips zakken database</h1>
-            <p> Toen ik 30 werd bedacht ik me dat het tijd werd voor een echte hobby: Chips zakken verzamelen. Ik heb
-                mijn hele leven al veel van aardappels gehouden en chips is vaak gemaakt van aardappels, al heb je ook
-                superveel maispoederchips. Ik discrimineer niet tussen chips en vind alle chips bewondernswaardig. Sinds
-                ik ben begonnen met verzamelen ben ik er achter gekomen dat er ontzettend veel soorten chips zijn, maar
-                dat er eigenlijk maar een paar smaken zijn die zich echt goed lenen voor chips. Zo heb je ontzettend
-                veel kaassmaak varianten, die allemaal kazig smaken en eigenlijk vooral zout.
-            </p>
-            <p id="chipsInfo"></p>
-        </section>
-        <hr class="separator_friet">
-        <div class="filter-container">
-            <label for="tasteFilter">Filter by Taste:</label>
-            <select id="tasteFilter">
-                <option value="">Alle smaken</option>
-                <!-- Add more taste options here -->
-            </select>
+<body class="chips-background">
+  <nav class="simple-navbar">
+    <ul>
+      <li><a href="index.html"><img src="img/other/navbar_aardappel.png" alt="Aardappel"></a></li>
+      <li><a href="friet.html"><img src="img/other/navbar_friet.png" alt="Friet"></a></li>
+      <li><a href="chips.html"><img src="img/other/navbar_chips.png" alt="Chips"></a></li>
+    </ul>
+  </nav>
 
-            <label for="brandFilter">Filter by Brand:</label>
-            <select id="brandFilter">
-                <option value="">Alle merken</option>
-                <!-- Add more brand options here -->
-            </select>
+  <!-- PAGE TITLE -->
+  <div class="container">
 
-            <label for="searchBox">Search:</label>
-            <input type="text" id="searchBox" placeholder="Zoek hier chips...">
+    <hr class="separator_friet">
+    <h1>Chips verzameling</h1>
+    <p> Toen ik me eentje 30 werd bedacht ik me dat het tijd werd voor een echte hobby: Chips zakken verzamelen. Ik heb
+      mijn hele leven al veel van aardappels gehouden en chips is vaak gemaakt van aardappels, al heb je ook
+      superveel maispoederchips. Ik discrimineer niet tussen chips en vind alle chips bewondernswaardig. Sinds
+      ik ben begonnen met verzamelen ben ik er achter gekomen dat er ontzettend veel soorten chips zijn, maar
+      dat er eigenlijk maar een paar smaken zijn die zich echt goed lenen voor chips. Zo heb je ontzettend
+      veel kaassmaak varianten, die allemaal kazig smaken en eigenlijk vooral zout.
+    </p>
 
-            <span class="separator"></span>
+    <p id="chipsInfo"></p>
+    <hr class="separator_friet">
 
-            <!-- Keep the default DataTables length menu -->
-        </div>
-        <div class="table-container">
-            <table id="myTable" class="display">
-                <thead>
-                    <tr>
-                        <!-- <th>Name</th> -->
-                        <th>Brand</th>
-                        <th>Taste</th>
-                        <th>Date</th>
-                        <th>Pic</th>
-                        <th>Opmerking</th>
-                        <th>Rating</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Content will be populated by JavaScript -->
-                </tbody>
-            </table>
-        </div>
-        <hr class="separator_friet">
-        <!-- Modal Section -->
-        <div id="imageModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="img01">
-        </div>
+    <!-- TABLE -->
+    <div class="filters">
+      <label for="brandFilter">Filter op merk:</label>
+      <select id="brandFilter" class="dataTables_length">
+        <option value="">Alle merken</option>
+      </select>
 
-        <!-- JavaScript Files -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-        <script src="scripts_chips.js"></script> <!-- Link to your JavaScript file -->
+      <label for="tasteFilter">Filter op smaak:</label>
+      <select id="tasteFilter">
+        <option value="">Alle smaken</option>
+      </select>
+
+      <label for="searchBox">Search:</label>
+      <input type="text" id="searchBox" placeholder="Zoek hier chips...">
+
+    </div>
+    <table id="datatable" class="display"></table>
+    <hr class="separator_friet">
+  </div>
+
+
+  <!-- COMMENT MODAL -->
+  <div id="commentModal">
+    <h3>Pleurt hier je mening</h3>
+    <ul id="commentList"></ul>
+    <input type="text" id="commentName" placeholder="Your name" /><br />
+    <div id="starRating">
+      <span data-value="1">★</span>
+      <span data-value="2">★</span>
+      <span data-value="3">★</span>
+      <span data-value="4">★</span>
+      <span data-value="5">★</span>
+    </div>
+    <textarea id="commentText" placeholder="Your comment"></textarea><br />
+    <button id="submitCommentBtn">Submit</button>
+    <button onclick="document.getElementById('commentModal').style.display='none'">Close</button>
+  </div>
+
+  <!-- IMAGE MODAL -->
+  <div id="imageModal" class="modal" style="display:none;">
+    <span class="close" style="position:absolute;top:10px;right:20px;font-size:32px;cursor:pointer;">&times;</span>
+    <img id="img01" style="display:block;max-width:90%;margin:auto;max-height:90vh;" />
+  </div>
+
+  <!-- MAIN SCRIPT -->
+  <script type="module" src="scripts_chips.js"></script>
 </body>
 
 </html>

@@ -2,117 +2,113 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chips</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+  <meta charset="UTF-8" />
+  <title>Chip Reviews</title>
+
+  <!-- STYLESHEETS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="styles.css" /> <!-- Optional external -->
+  <link rel="stylesheet" href="styles2.css">
+
+  <!-- LIBRARIES -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script src="https://cdn.datatables.net/plug-ins/1.13.6/sorting/datetime-moment.js"></script>
 </head>
 
-<body class="friet-background">
-    <div class="container">
-        <header>
-            <div class="logo"></div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html"><img src="img/other/navbar_aardappel.png"></a></li>
-                    <li><a href="friet.html"><img src="img/other/navbar_friet.png"></a></li>
-                    <li><a href="chips.html"><img src="img/other/navbar_chips.png"></a></li>
-                </ul>
-            </nav>
-        </header>
-        <hr class="separator_friet">
-        <!-- Updated Header Section -->
-        <section class="main-header">
-            <h1>Frietjes recensies</h1>
-            <p> Hier schrijf ik recensies over frietjes die ik oraal tot mij heb genomen. Het is alom bekend dat frieten
-                vet lekker zijn. Kinderen en volwassenen houden ervan, maar er zijn ook haters die vinden dat het
-                kindervoedsel is. Over smaak valt natuurlijk niet te twisten, maar mensen met een dergelijke mening
-                moeten niet zo stoer doen en gewoon respect hebben voor een oer-oud en prachtig aardappelproduct.
-                Wist je dat tijdens WO I veel Belgische frietkramen vlakbij de frontlinies stonden om de soldaten van
-                frietjes te voorzien? De Engelstalige soldaten noemden de frietjes 'French Fries', omdat de Belgische
-                soldaten Frans spraken. Zo werden Belgian fries ineens French fries. Dus een beetje respect graag voor
-                friet ja!
-                Nou in Nederland eten we dus gemiddeld <strong>18 kilo friet</strong> per persoon per jaar. De bron van
-                deze informatie is de Libelle (<a
-                    href="https://www.libelle.nl/actueel/het-frietje-bestaat-150-jaar-zoveel-kilo-eten-we-per-jaar~bab50e78/"
-                    target="_blank">hier misschien werkt de link nog</a>).
-                Volgens diezelfde bron eten we al 150 jaar friet in Nederland. Reuze interessant zeg, ik zou toch zeggen
-                dat 'we' al langer friet eten dan dat?
-                Nou laten we dan nog maar wat andere leuke cijfers erbij halen.
-            <ul>
-                <li>Belgen eten <strong>86 kilo friet </strong> pppj. Dat is toch ziek?! Wat een vetkleppen daar zeg,
-                    niet
-                    te geloven.</li>
-                <li>Ongeveer 1 cm is de gouden frietjes-standaard. Dunner is snel slap en dikker niet snel gaar.</li>
-                <li>Frietjes blijven drijven als je ze in water gooit. Handig, want zo kun je bepalen of iemand een heks
-                    is met behulp van een grote weegschaal.</li>
-                <li>Nederland telt gemiddeld 2,9 snackbars per 10k mensen. Limburg is de provincie met de hoogste
-                    dichtheid, met 4,7 snackbars per 10k.</li>
-                <li>Er zijn 4.800 snackbars in Nederland. Ga er maar vanuit dat je overal friet kan eten.</li>
-                <li>Dit sites bestaan gewoon echt: <a href="https://www.frituurcentrum.nl/"
-                        target="_blank">Frituurcentrum.nl</a>
-                    en <a href="https://www.profri.nl/" target="_blank">Vereniging Professionele Frituurders</a></li>
-            </ul>
-            Zo zie je maar dat frieten erg geliefd zijn. Maar...friet met maten, want anders ga je dood aan kans op
-            hart- en vaatziekte. Of toch niet? <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">Deze studie</a>
-            </li> laat zien dat frieten eigenlijk heel gezond zijn!!
-            </p>
+<body class="chips-background">
+  <nav class="simple-navbar">
+    <ul>
+      <li><a href="index.html"><img src="img/other/navbar_aardappel.png" alt="Aardappel"></a></li>
+      <li><a href="friet.html"><img src="img/other/navbar_friet.png" alt="Friet"></a></li>
+      <li><a href="chips.html"><img src="img/other/navbar_chips.png" alt="Chips"></a></li>
+    </ul>
+  </nav>
 
-            <!-- <p id="frietInfo"></p> -->
-        </section>
-        <hr class="separator_friet">
-        <div class="filter-container">
-            <label for="tasteFilter">Naam Frituur:</label>
-            <select id="tasteFilter">
-                <option value="">Alle namen</option>
-                <!-- Add more taste options here -->
-            </select>
+  <!-- PAGE TITLE -->
+  <div class="container">
 
-            <label for="brandFilter">Stad/Dorp:</label>
-            <select id="brandFilter">
-                <option value="">Alle Steden/Dorpen</option>
-                <!-- Add more brand options here -->
-            </select>
+    <hr class="separator_friet">
+    <h1>Frietjes recensies</h1>
+    <p> Hier schrijf ik recensies over frietjes die ik oraal tot mij heb genomen. Het is alom bekend dat frieten
+      vet lekker zijn. Kinderen en volwassenen houden ervan, maar er zijn ook haters die vinden dat het
+      kindervoedsel is. Over smaak valt natuurlijk niet te twisten, maar mensen met een dergelijke mening
+      moeten niet zo stoer doen en gewoon respect hebben voor een oer-oud en prachtig aardappelproduct.
+      Wist je dat tijdens WO I veel Belgische frietkramen vlakbij de frontlinies stonden om de soldaten van
+      frietjes te voorzien? De Engelstalige soldaten noemden de frietjes 'French Fries', omdat de Belgische
+      soldaten Frans spraken. Zo werden Belgian fries ineens French fries. Dus een beetje respect graag voor
+      friet ja!
+      Nou in Nederland eten we dus gemiddeld <strong>18 kilo friet</strong> per persoon per jaar. De bron van
+      deze informatie is de Libelle (<a
+        href="https://www.libelle.nl/actueel/het-frietje-bestaat-150-jaar-zoveel-kilo-eten-we-per-jaar~bab50e78/"
+        target="_blank">hier misschien werkt de link nog</a>).
+      Volgens diezelfde bron eten we al 150 jaar friet in Nederland. Reuze interessant zeg, ik zou toch zeggen
+      dat 'we' al langer friet eten dan dat?
+      Nou laten we dan nog maar wat andere leuke cijfers erbij halen.
+    <ul>
+      <li>Belgen eten <strong>86 kilo friet </strong> pppj. Dat is toch ziek?! Wat een vetkleppen daar zeg,
+        niet
+        te geloven.</li>
+      <li>Ongeveer 1 cm is de gouden frietjes-standaard. Dunner is snel slap en dikker niet snel gaar.</li>
+      <li>Frietjes blijven drijven als je ze in water gooit. Handig, want zo kun je bepalen of iemand een heks
+        is met behulp van een grote weegschaal.</li>
+      <li>Nederland telt gemiddeld 2,9 snackbars per 10k mensen. Limburg is de provincie met de hoogste
+        dichtheid, met 4,7 snackbars per 10k.</li>
+      <li>Er zijn 4.800 snackbars in Nederland. Ga er maar vanuit dat je overal friet kan eten.</li>
+      <li>Dit sites bestaan gewoon echt: <a href="https://www.frituurcentrum.nl/" target="_blank">Frituurcentrum.nl</a>
+        en <a href="https://www.profri.nl/" target="_blank">Vereniging Professionele Frituurders</a></li>
+    </ul>
+    Zo zie je maar dat frieten erg geliefd zijn. Maar...friet met maten, want anders ga je dood aan kans op
+    hart- en vaatziekte. Of toch niet? <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">Deze studie</a>
+    </li> laat zien dat frieten eigenlijk heel gezond zijn!!
+    </p>
+    <hr class="separator_frikkedel">
 
-            <label for="searchBox">Search:</label>
-            <input type="text" id="searchBox" placeholder="Typ iets...">
+    <!-- TABLE -->
+    <!-- <div class="filters">
+      <label for="brandFilter">Filter op merk:</label>
+      <select id="brandFilter" class="dataTables_length">
+        <option value="">Alle merken</option>
+      </select>
 
-            <span class="separator_friet"></span>
+      <label for="tasteFilter">Filter op smaak:</label>
+      <select id="tasteFilter">
+        <option value="">Alle smaken</option>
+      </select>
 
-            <!-- Keep the default DataTables length menu -->
-        </div>
-        <div class="table-container">
-            <table id="myTable" class="display">
-                <thead>
-                    <tr>
-                        <th>Locatie</th>
-                        <th>Link</th>
-                        <th>Frituur</th>
-                        <th>Date</th>
-                        <th>Image</th>
-                        <th>Opmerking</th>
-                        <th>Score</th>
-                        <th>Overall</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Content will be populated by JavaScript -->
-                </tbody>
-            </table>
-        </div>
-        <hr class="separator_frikkedel">
-        <!-- Modal Section -->
-        <div id="imageModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="img01">
-        </div>
+      <label for="searchBox">Search:</label>
+      <input type="text" id="searchBox" placeholder="Zoek hier chips...">
 
-        <!-- JavaScript Files -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-        <script src="scripts_friet.js"></script> <!-- Link to your JavaScript file -->
+    </div> -->
+    <table id="datatable" class="display">
+      <thead>
+        <tr>
+          <th>Locatie</th>
+          <th>Link</th>
+          <th>Frituur</th>
+          <th>Date</th>
+          <th>Image</th>
+          <th>Opmerking</th>
+          <th>Score</th>
+          <th>Overall</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <hr class="separator_friet">
+  </div>
+
+
+  <!-- IMAGE MODAL -->
+  <div id="imageModal" class="modal" style="display:none;">
+    <span class="close" style="position:absolute;top:10px;right:20px;font-size:32px;cursor:pointer;">&times;</span>
+    <img id="img01" style="display:block;max-width:90%;margin:auto;max-height:90vh;" />
+  </div>
+
+  <!-- MAIN SCRIPT -->
+  <script src="scripts_friet.js"></script>
 </body>
 
 </html>

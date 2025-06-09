@@ -55,6 +55,7 @@ header {
 
 
 
+
 /* Navigation Bar */
 .navbar {
     position: relative;
@@ -317,12 +318,12 @@ footer {
     margin-bottom: 1px; /* Adds space below the select dropdown */
 }
 
-#myTable th {
+#datatable th {
     text-align: left;
     /* background-color: #e6bb58; */
 }
 
-#myTable img.thumbnail {
+#datatable img.thumbnail {
     max-width: 60px;
     height: auto;
     display: block;
@@ -330,7 +331,7 @@ footer {
 }
 
 /* Style the scores column */
-#myTable td.scores {
+#datatable td.scores {
     vertical-align: top; /* Align content to the top */
     padding: 10px; /* Add spacing inside the cell */
     line-height: 1.5; /* Adjust line spacing for readability */
@@ -338,7 +339,7 @@ footer {
 }
 
 /* Inline styling for each score line */
-#myTable td.scores .score-line {
+#datatable td.scores .score-line {
     display: flex; /* Use flexbox to keep score and stars on the same line */
     justify-content: space-between; /* Align score and stars with spacing */
     margin-bottom: 5px; /* Add space between lines */
