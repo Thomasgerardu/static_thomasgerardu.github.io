@@ -8,7 +8,7 @@ ID,Name,Brand,Taste,Date,Pic,Rating,Opmerking
 7,Chips,SnackDay,Sweet Potato,03/08/2024,img\chips\snack_daily_sweet_potato.jpg,4.0,Leuk geprobeerd en prima als je in een open minded bui bent in de zomer bijvoorbeeld. Prima uitgevoerd. Lekkerder kun je dit soort chips niet maken denk ik.
 8,Chips,Lays (MAX),Sourcream & Onion,21/06/2024,img\chips\lays_(max)_sourcream_&_onion.jpg,3.0,Tja weer een Cheese & Union oftewel fabriekssmaak^2. Verder alles prima.
 9,Chips,Lays,Hamburger,10/07/2024,img\chips\lays_hamburger.jpg,3.0,Redelijke debiele smaak op eerste gezicht maar verrast toch enigszins positief. Vandaar 3 sterren.
-10,Ribbel,Albert Hein,Paprika,23/06/2024,img\chips\albert_hein_paprika.jpg,3.0,Kinderen worden hier blij van maar geen verfijnde smaak. Sommige chips erg vettig en iets te veel paprika en zoutpoeder toegevoegd.
+10,Ribbel,Albert Heijn,Paprika,23/06/2024,img\chips\albert_hein_paprika.jpg,3.0,Kinderen worden hier blij van maar geen verfijnde smaak. Sommige chips erg vettig en iets te veel paprika en zoutpoeder toegevoegd.
 11,Chips,Pirato,Ketchup,19/06/2024,img\chips\pirato_ketchup.jpg,2.0,Deze zak ziet er triest uit en is verder ook triest. Geen lol aan te beleven maar smaakt bij vlagen toch acceptabel.
 12,Chips,Pirato,Pepper & Salt,06/08/2024,img\chips\pirato_pepper_&_salt.jpg,3.0,Ik geloof dat Pirato het vak nog niet zo verstaat. Dit zou makkelijk en lekker moeten zijn maar is het niet.
 13,Chips,Pirato,Pickle,18/05/2024,img\chips\pirato_pickle.jpg,2.0,Pirato snapt het niet. Chips is wel mooi dun maar verder alles triest.
@@ -41,13 +41,13 @@ ID,Name,Brand,Taste,Date,Pic,Rating,Opmerking
 40,Chips,Deluxe,Sea Salt & Vinegar,04/07/2024,img\chips\sd_seasal_balsamic_vinegar.jpg,4.0,Ik had deze eigenlijk tegelijk met die andere vinegar chips van Deluxe moeten eten. Ik kan het smaakverschil tussen de twee zakken moeilijk uit herinnering beschrijven.
 41,Snuggles,SnackDay,Sweet Chilli,21/07/2024,img\chips\sd_sweet_chili_flavour.jpg,5.0,Fokking lekkere chips. Ik fuck sowieso met deze vorm en de smaak is ook echt precies goed zoet-zout. Chapeau!
 42,Chips,Chio,Paprika,25/08/2024,img\chips\chio_paprika.jpg,5.0,Ja Chio is toch wel die alternative brand he en ze weten hoe je gebakken lucht moet verkopen. En die vorm is gewoon leuk <3
-43,Chips,Albert Hein,Naturel,05/09/2024,img\chips\albert_hein_naturel.jpg,2.0,Zoals te verwachten mega saai. Echt een soort triestigheid in een zakje.
+43,Chips,Albert Heijn,Naturel,05/09/2024,img\chips\albert_hein_naturel.jpg,2.0,Zoals te verwachten mega saai. Echt een soort triestigheid in een zakje.
 44,Chips,Cheetos,Flaming Hot,16/08/2024,img\chips\cheetos_flaming_hot.jpg,3.0,Beetje gare sensatie maar inderdaad wel redelijk hot. Vorm en crunch leuk maar smaak cheap-ass.
 45,Chips,Boerderij,Paprika,13/09/2024,img\chips\boerderij_paprika.jpg,4.0,"Vettige marketing truc dit. Welke aardappel komt niet van een boerderij? Maargoed doe maar rustiek, 4 sterren verdient."
 46,Tortilla,Doritos,Sweet Chilli,11/09/2024,img\chips\doritos_sweet_chilli.jpg,5.0,jajaja 5 sterren duhhhhhh ik ga niet veel praten G.
 47,Chips,Santa Maria,Cheese,25/08/2024,img\chips\santa_maria_cheese.jpg,2.0,Nieuwe product en ik snap dat je met kaas komt maar alsjeblief zeg er is al genoeg oninspirerende kaaspoeder chips op de wereld.
 48,Chips,Brets,Mushrooms,31/08/2024,img\chips\brets_mushrooms.jpg,3.0,tja je proeft wel echt die champignon. Maar echt pure champignong. Van dat sap uit de pan zegmaar als je champignons aan het bakken bent.
-49,Chips,Hartendiefjes,Naturel,18/08/2024,img\chips\hartendiefjes_naturel.jpg,4.0,"Echte branding dit want de smaak is niet sensationeel. Wel de vorm en de sensatie, de zak de feeeeeel"
+49,Chips,Hartendiefjes,Naturel,18/08/2024,img\chips\hartendiefjes_naturel.jpg,4.0,"Echte branding dit want de smaak is niet sensationeel. Wel de vorm en de sensatie, de zak, de feeeeeel"
 50,Chips,Cheetos,Paprika,28/08/2024,img\chips\cheetos_paprika.jpg,3.0,Ohja de bekende Chipito vorm alleen dan paprika ipv kaassmaak. Mwuah. Mag van mij wel weer verdwijnen.
 51,Chips,Santa Maria,Sweet Chilli,17/08/2024,img\chips\santa_maria_sweet_chilli.jpg,5.0,Gebakken lucht. Gekregen van een reclame-stand op UTC. Teruggegaan om nog een te halen! Maar wat eet je nou? Potato 'Pops'?
 52,Chips,Lays (Wokkels),Paprika,16/09/2024,img\chips\lays_(wokkels)_paprika.jpg,4.0,Wokkels... wie kent ze niet? Prima en lekker en leuk maar geen WOW.
@@ -82,7 +82,7 @@ ID,Name,Brand,Taste,Date,Pic,Rating,Opmerking
 81,Chips,Brets,Bacon,16/11/2024,img\chips\brets_bacon.jpg,4.0,Ik had gedacht dat dit echt vies zou zijn maar het is gewoon bouillonnerig zout.
 82,Tortilla,Doritos,Paprika,17/11/2024,img\chips\doritos_paprika.jpg,5.0,Tuuuuurlijk fokking lekker hmmm echt goed deze.
 83,Chips,Lays (sensations),Pepper & Cream,09/11/2024,img\chips\lays_(sensations)_pepper_&_cream.jpg,5.0,Deze hebben verschillende leken mij aangeraden. Ik had deze al eens gegeten maar wilde 'm graag nog eens proeven om 'm welverdiend 5 sterren te geven.
-84,Chips,Albert Hein,Salt & Vinegar,01/11/2024,img\chips\albert_hein_salt_&_vinegar.jpg,4.0,Tja het is allemaal wel lekker die seasalt vinegar. Wel echt zo'n smaak waarvan je tong allemaal droge kloven krijgt van het zuur en zout als je 'n zak solo eet.
+84,Chips,Albert Heijn,Salt & Vinegar,01/11/2024,img\chips\albert_hein_salt_&_vinegar.jpg,4.0,Tja het is allemaal wel lekker die seasalt vinegar. Wel echt zo'n smaak waarvan je tong allemaal droge kloven krijgt van het zuur en zout als je 'n zak solo eet.
 85,Tubes,Croky,Paprika,16/11/2024,img\chips\croky_paprika_1.jpg,5.0,TUUUUBES mate!! Fokking delish chips. Great for arvo's with your mates in the park with a few tinnies
 86,Chips,SunSnacks,Pepper & Salt,06/12/2024,img\chips\sunsnacks_pepper_&_salt.jpg,4.0,SunSnack lijkt wel erg veel op Snackday en Snackgold. Smaak was goed van deze chips maar niet smaakpupillenoverstijgend.
 87,Chips,SunSnacks,Paprika,08/12/2024,img\chips\sunsnack_paprika.jpg,3.0,Skeere dingen neef. Echt die Aldi dingen. Was kleine zakje dus snel gechapt gelijk weg klaar.
@@ -141,7 +141,7 @@ ID,Name,Brand,Taste,Date,Pic,Rating,Opmerking
 140,Chips,Brets,Salt,23/05/2025,img\chips\brets_salt_1.jpg,4.0,"Deze heb ik niet de kans gegeven die ze verdienen. Zak was erg lang open waardoor de chips kwebsch zijn geworden. Smaakt prima, maar geen idee wat de Rotisserie moet voorstellen?"
 141,Bugles,Lays,Naturel,27/04/2025,img\chips\lays_naturel.jpg,5.0,Wat denkde jonge gewoon 5 sterren ik ga niet te veel praten deze ding spreekt voor zichzelf.
 142,Chips,Koikeya,Wasabi,05/05/2025,img\chips\koikeya_wasabi.jpg,4.0,Chapeau voor de dosering van de wasabi smaak. Mooie chippen ook. Ik denk net een haar dikker dan de gemiddelde chip waardoor de vorm ook wat mooier blijft om te presenteren
-143,Kroepoek,Albert Hein,Bali,29/05/2025,img\chips\albert_hein_bali.jpg,4.0,Lekker hoor maar ik heb een zeer sterke associatie met avondeten bij deze chips dus ik zou ze niet snel kopen om zomaar te eten
+143,Kroepoek,Albert Heijn,Bali,29/05/2025,img\chips\albert_hein_bali.jpg,4.0,Lekker hoor maar ik heb een zeer sterke associatie met avondeten bij deze chips dus ik zou ze niet snel kopen om zomaar te eten
 144,Chips,Albert Heijn,Naturel,05/06/2025,img\chips\albert_heijn_naturel.jpg,3.0,Fokking saai maar prima. Leuk voor verjaardagen waar meerdere zakken chips aanwezig zijn en mensen op chipskosten moesten letten maar verder niet echt relevante chips
 145,Chips,Cheetos,Ham & Cheese,06/06/2025,img\chips\cheetos_ham_&_cheese.jpg,4.0,Tock nog aardig chips. Had ik niet verwacht omdat de zak er aardig triest uitziet maar toch gewoon goed te kanen.
 146,Chips,Oriental,Cheese,01/06/2025,img\chips\oriental_cheese.jpg,5.0,"Hele neppe kaassmaak, vol met MSG denk ik. Dat maakt ze wel mega lekker en zoutig. Ik denk eigenlijk dat cheetos hier wel jaloers op zou zijn"
@@ -171,3 +171,20 @@ ID,Name,Brand,Taste,Date,Pic,Rating,Opmerking
 170,Chips,Rewind,BBQ & Honey,19/07/2025,img\chips\rewind_bbq_&_honey.jpg,1.0,"Zak belooft veel goeds totdat je de eerste driehoek in je smoel hebt. Dan kom je van een koude kermis thuis met ijspegels en kapotte attracties. Smaak is afwezig, en als je toch een vlaagje smaak te pakken hebt doemen beelden op van mortuaria en rioolwaterzuiveringsinstallaties."
 171,Chips,Lays,Paprika,27/08/2025,img\chips\lays_paprika_1.jpg,5.0,"Gevalletje 6 sterren neef. Twisted? Deep cut? Paprika? Deze kwamen uit een Poolse winkel. Waarschijnlijk zijn deze niet eens legaal in NL, zo lekker."
 172,Chips,SnackDay,Paprika,02/07/2025,img\chips\snackday_paprika_1.jpg,2.0,"Treurig design, kampvuur chips die dan blijft liggen 's nachts en de dag erna op het vuur kan met zak en al."
+173,Chips,Albert Heijn,Sourcream & Onion,20/09/2025,img\chips\albert_heijn_sourcream_&_onion.jpg,3.0,Eigenlijk wel oké! De zak voorspelt teleurstelling maar deze blijft uit. Alsnog zou ik niemand aanraden om deze te kopen.
+174,Chips,Albert Heijn,Peper & Zout,24/10/2025,img\chips\albert_heijn_peper_&_zout.jpg,3.0,"Achja, ik heb hier eigenlijk geen mening over. Het heeft bestaansrecht"
+175,Chips,Hoeksche chips,Paprika,01/10/2025,img\chips\hoeksche_chips_paprika.jpg,4.0,"'De allerlekkerste' vind ik wel grootspraak. De zak geeft echter wel een gevoel van ambacht, mogelijk incorrect. Subtiele smaak, chips voor volwassenen die hun tong niet willen pekelen."
+176,Takis,Takis,Teriyaki,28/09/2025,img\chips\takis_teriyaki.jpg,3.0,"Met Daud gegeten in Oyambre. Proeft een beetje als kaneel?! Onverwacht, wel lekker en leuk gemaakt. Ik waardeer de poging maar dit is niet mijn ding."
+177,Chips,Cheetos,Cheese,01/09/2025,img\chips\cheetos_cheese_1.jpg,2.0,"Hele domme kinderlok marketing met spoken en gare vormen. Halloween chips, maar eigenlijk niks nieuws. Gewoon andere vorm, hergebruik recept. Niks aan."
+178,Chips,SnackDay,Naturel,02/09/2025,img\chips\snackday_naturel.jpg,2.0,"Saai, vettig, niks bijzonders. Gewoon een manier van SnackDay om hun naturelchips ergens te dumpen. Alleen door het design van de zak krijg je er een beetje zin in."
+179,Chips,Santos Moreno,Naturel,20/09/2025,img\chips\santos_moreno_naturel.jpg,4.0,"Stevige zak, goede naturelsmaak. Ik blijf naturel een saaie smaak vinden die ik alleen kan waarderen bij gebrek aan beter of bij ontzettende honger."
+180,Chips,Matutano,Butter,01/10/2025,img\chips\matutano_butter.jpg,2.0,"Totaal geen botersmaak terwijl dat wel de aangegeven smaak is, eerder paprika. En verder ook saai. Geen actieve herinnering zelfs, dus dan maar een 2/5."
+181,Chips,ElValle,Ei,28/09/2025,img\chips\elvalle_ei.jpg,5.0,"Hoewel ik deze niet opnieuw zou kopen, waardeer ik de originele smaak en de treffende gelijkenis met een echt gebakken ei."
+182,Chips,Risi,?,15/09/2025,img\chips\risi_unknown.jpg,4.0,"Daar heb je de zoogdier drollenvorm weer. Lekker, kazig, oranje tengels, hap-slik-weg. Knallertje hoor."
+183,Chips,Lays,Olive Oil,15/09/2025,img\chips\lays_olive_oil.jpg,3.0,Op het vliegveld gegeten. Prima maar niet bijzonder.
+184,Chips,Koikeya,Teriyaki,26/09/2025,img\chips\koikeya_teriyaki.jpg,5.0,"Koikeya snapt wel goed hoe je die ding moet maken. Ze vermarkten die oosterse smaken voor westers publiek, denk ik."
+185,Chips,SanCarlo,Naturel,26/09/2025,img\chips\sancarlo_naturel.jpg,4.0,Goede naturel! Respectabel. Tja wat moet je over naturel zeggen? 't blijft toch saaie chips.
+186,Chips,Jumbo,Paprika,14/09/2025,img\chips\jumbo_paprika.jpg,3.0,Wokkels zijn wel echt beter hoor. En salto's? Que? Goedwillend snap ik het wel maar we hebben het hier gewoon over een helixvormig zoutje.
+187,Chips,BitesWeLove,Paprika,15/09/2025,img\chips\biteswelove_paprika.jpg,1.0,Bites we try to not uitkotsen. Zwaar teleurstellende uitvoering van Lentil chips. Wil zeker niet zeggen dat alle Lentilchips vies zijn! Maar wel een traumaverwekker hoor deze. De volgende keer met Lentilchips ben ik op mijn hoede.
+188,Chips,Croky,Paprika,12/09/2025,img\chips\croky_paprika_3.jpg,4.0,"'Dit kan nooit zo lekker zijn als Doritos' maar wat blijkt, ze zijn gewoon maar een klein beetje viezer! Zeg maar gerust lekker. Gewoon kopen hoor. Croky verstevigt they/them positie in de game."
+189,Chips,Kosuka,Ghost Pepper,05/09/2025,img\chips\kosuka_ghost_pepper.jpg,2.0,Casavechips leuk. Ghost pepper smaak stom. Je krijgt gewoon een hete bek. Nou leuk bedankt.
