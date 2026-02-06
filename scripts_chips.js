@@ -210,7 +210,7 @@ Papa.parse('chips.csv', {
 
             // Logic for text about chipstable
             const datum_startmoment = '2024-05-01'; // niet aanpassen, dit is de startdatum van de chipsverzameling
-            const datum_bijgewerkt = '2026-01-03';
+            const datum_bijgewerkt = '2026-02-06';
 
             const datum_nu = new Date(datum_bijgewerkt).toLocaleDateString('nl-NL', {
                 day: 'numeric', month: 'long', year: 'numeric'
