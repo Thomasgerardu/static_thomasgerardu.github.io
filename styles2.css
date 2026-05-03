@@ -5,6 +5,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 body {
     font-family: Arial, sans-serif;
 }
@@ -15,6 +16,13 @@ h1 {
     font-weight: normal;
     text-align: left;
     /* background-image: url(img/other/olie.jpg); */
+}
+
+p2 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    color: rgb(255, 0, 0);
 }
 
 img {
@@ -75,9 +83,9 @@ img {
 }
 
 .potato-background {
-    background: linear-gradient(rgba(248, 248, 248, 1), rgba(248, 248, 248, 0.60)), 
-                url(img/other/Picture2.png);
-    background-size:cover;
+    background: linear-gradient(rgba(248, 248, 248, 1), rgba(248, 248, 248, 0.60)),
+        url(img/other/Picture2.png);
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -188,9 +196,12 @@ footer {
 .logo {
     background-image: url(img/other/sitelogo.webp);
 
-    background-position: left; /* Center the image */
-    width: 450px; /* Set the width of the logo container */
-    height: 150px; /* Set the height of the logo container */
+    background-position: left;
+    /* Center the image */
+    width: 450px;
+    /* Set the width of the logo container */
+    height: 150px;
+    /* Set the height of the logo container */
     font-size: 30px;
     font-weight: bold;
     text-transform: uppercase;
