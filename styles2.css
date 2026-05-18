@@ -1,9 +1,7 @@
 /* Font */
 @font-face {
     font-family: 'quicksand';
-    src: url('font/quicksand.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('font/VeriNiecPicaRegular-q9OV.ttf') format('truetype');
 }
 
 body {
@@ -13,7 +11,7 @@ body {
 h1 {
     font-family: 'quicksand', sans-serif;
     font-size: 40px;
-    font-weight: normal;
+    font-weight: bold;
     text-align: left;
     /* background-image: url(img/other/olie.jpg); */
 }
